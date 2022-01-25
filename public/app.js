@@ -87,7 +87,8 @@ function updateDisplay(result){
         const car = document.createElement('div');
         car.className = 'car';
         car.style.backgroundColor =`${element.color}`;       
-        wrapperCar.append(btnA, btnB, car);
+        wrapperCar.append(btnA, btnB);
+        pageGarage.appendChild(car);
     });
 }
 
