@@ -47,13 +47,15 @@ main{
 }
 
 .btn {
+    padding: 7px, 5px;
     margin: 5px;
     background-color:rgb(255, 255, 255);
     border-radius: 5px;
     text-transform: uppercase;
     color: rgb(0, 0, 0);
     border: none;
-    padding: 7px, 5px;
+    
+    cursor: pointer;
 }
 
 .btn-ab{
