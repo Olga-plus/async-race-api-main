@@ -14,12 +14,13 @@ buttonGarage.onclick = function() {
 function listCar (){
     fetch('http://localhost:3000/garage')
     .then(response => response.json())
-    createGaragePage (result);
+    .then(result =>  createGaragePage (result))
+   
 }
 
-async function createGaragePage (result){
+ function createGaragePage (result){
     pageGarage.innerText = 'Page #1'; ///
-   await updateDisplay(result);
+   updateDisplay(result);
 }
 
 
