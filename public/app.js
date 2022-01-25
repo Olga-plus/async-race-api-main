@@ -37,11 +37,11 @@ buttonCreate.onclick = function() {
         },
         body: JSON.stringify(newCar)
     }).then(response => console.log( response.json())
-    .then())
+    .then(listCar ()))
 
     document.getElementById('createCarName').value = '';
     document.getElementById('createCarColor').value = '';
-    listCar ();
+    
 };
 
 const pageGarage = document.querySelector('.page-garage');
@@ -53,7 +53,7 @@ function updateDisplay(result){
     result.forEach(element => {
 
         const wrapperBtn = document.createElement('div');
-        wrapperBtn.className = 'wrapper';
+        wrapperBtn.className = 'wrapper wrapper-btn-car';
         pageGarage.appendChild(wrapperBtn);
 
         const selectButton = document.createElement('button');
@@ -73,7 +73,7 @@ function updateDisplay(result){
         wrapperBtn.append(selectButton, removeButton, nameCar);
 
         const wrapperCar = document.createElement('div');
-        wrapperCar.className = 'wrapper';
+        wrapperCar.className = 'wrapper wrapper-car';
         pageGarage.appendChild(wrapperCar);
 
         const btnA = document.createElement('button');
