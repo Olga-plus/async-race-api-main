@@ -24,25 +24,7 @@ function listCar (){
 }
 
 
-buttonCreate.onclick = function() {
-    let newCar = {
-        name: document.getElementById('createCarName').value,
-        color: document.getElementById('createCarColor').value
-      }
 
-    fetch('http://localhost:3000/garage', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newCar)
-    }).then(response => console.log( response.json())
-    .then(listCar ()))
-
-    document.getElementById('createCarName').value = '';
-    document.getElementById('createCarColor').value = '';
-    
-};
 
 const pageGarage = document.querySelector('.page-garage');
 
@@ -92,6 +74,28 @@ function updateDisplay(result){
     });
 }
 
+buttonCreate.onclick = function() {
+    let newCar = {
+        name: document.getElementById('createCarName').value,
+        color: document.getElementById('createCarColor').value
+      }
+
+    fetch('http://localhost:3000/garage', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newCar)
+    }).then(response => console.log( response.json()))
+    .then(() => {
+        pageGarage.innerText = 'Page #1'; ///
+        listCar ();
+    });
+
+    document.getElementById('createCarName').value = '';
+    document.getElementById('createCarColor').value = '';
+    
+};
 
 function remove () {
         fetch(`http://localhost:3000/garage/${this.id}`, {
