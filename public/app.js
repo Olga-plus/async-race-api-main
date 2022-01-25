@@ -93,10 +93,12 @@ function updateDisplay(result){
 
 
 function remove () {
-console.log(this.id)
         fetch(`http://localhost:3000/garage/${this.id}`, {
             method: 'DELETE',
         }).then(response => console.log(response.json()))
-        listCar ();
+        .then(() => {
+            pageGarage.innerText = 'Page #1'; ///
+            listCar ();
+        });
 };
 
