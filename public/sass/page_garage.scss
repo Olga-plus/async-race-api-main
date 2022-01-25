@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(0, 34, 28);
+    background-color: rgb(64, 160, 0);
     color: whitesmoke;
 }
 main{
@@ -22,10 +22,13 @@ main{
 .car{
     width: 50px;
     height: 20px;
-    background: yellowgreen;
-    background-color: yellowgreen;
-    -webkit-mask-image: url(../assets/car_.svg);
+    // background: yellowgreen;
+    // background-color: yellowgreen;
     mask-image: url('../assets/car_.svg');
+    -webkit-mask-size: 70%;
+    mask-size: 70%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
 }
 
 .btn {
