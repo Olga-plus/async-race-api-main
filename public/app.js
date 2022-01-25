@@ -59,11 +59,11 @@ function updateDisplay(result){
         pageGarage.appendChild(wrapperCar);
 
         const btnA = document.createElement('button');
-        btnA.className = 'btn-a';
+        btnA.className = 'btn-ab';
         btnA.innerText = 'A';
         
         const btnB = document.createElement('button');
-        btnB.className = 'btn-b';
+        btnB.className = 'btn-ab';
         btnB.innerText = 'B';
 
         const car = document.createElement('div');

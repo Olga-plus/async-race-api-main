@@ -58,7 +58,18 @@ main{
     border-radius: 5px;
     text-transform: uppercase;
     color: whitesmoke;
+    border: none;
+    padding: 3px;
 }
+
+.btn-ab{
+    padding: 5px;
+    border:1px solid yellowgreen;
+    color: yellowgreen;
+    background: none;
+}
+
+
 
 .wrapper-car{
     display: flex;
