@@ -41,9 +41,7 @@ main{
     mask-repeat: no-repeat;
     padding-left: 19px;
     left: 35px;
-    transition-property: left;
-    transition-duration: 3s;
-    transition-timing-function: ease-in;
+    transition: left 2s linear 0.2s;
 }
 
 .car:hover{
