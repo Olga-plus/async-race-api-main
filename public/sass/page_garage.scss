@@ -7,7 +7,7 @@ html {
 
 
 body{
-    background-color: rgb(43, 0, 37);
+    background-color: rgb(75, 2, 65);
     color: whitesmoke;
 }
 
@@ -85,14 +85,4 @@ main{
 .wrapper-car{
     display: flex;
     border-bottom: 2px dashed whitesmoke;
-}
-
-@-webkit-keyframes backgroundScroll {
-    from {background-position: 0 0;}
-    to {background-position: -400px 0;}
-}
-
-@keyframes backgroundScroll {
-    from {background-position: 0 0;}
-    to {background-position: -400px 0;}
 }
