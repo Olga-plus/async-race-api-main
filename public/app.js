@@ -15,9 +15,15 @@ function listCar (){
     fetch('http://localhost:3000/garage')
     .then(response => response.json())
     .then(result => {
-        createGaragePage(result);
+        listCar ();
     })
 }
+
+async function createGaragePage (result){
+    pageGarage.innerText = 'Page #1'; ///
+   await updateDisplay(result);
+}
+
 
 buttonCreate.onclick = function() {
     let newCar = {
@@ -46,12 +52,10 @@ function updateDisplay(result){
     console.log(result)
 
     result.forEach(element => {
-        const container = document.createElement('div');
-        pageGarage.appendChild(container);
 
         const wrapperBtn = document.createElement('div');
         wrapperBtn.className = 'wrapper';
-        container.appendChild(wrapperBtn);
+        pageGarage.appendChild(wrapperBtn);
 
         const selectButton = document.createElement('button');
         selectButton.className = 'select-btn';
@@ -71,7 +75,7 @@ function updateDisplay(result){
 
         const wrapperCar = document.createElement('div');
         wrapperCar.className = 'wrapper';
-        container.appendChild(wrapperCar);
+        pageGarage.appendChild(wrapperCar);
 
         const btnA = document.createElement('button');
         btnA.className = 'btn-a';
@@ -90,15 +94,10 @@ function updateDisplay(result){
 
 
 function remove () {
-    console.log(this.id)
+console.log(this.id)
         fetch(`http://localhost:3000/garage/${this.id}`, {
             method: 'DELETE',
         }).then(response => console.log(response.json()))
-        .then()//обновить список 
         listCar ();
 };
 
- function createGaragePage (result){
-    pageGarage.innerText = 'Page #1'; ///
-    updateDisplay(result);
-}
