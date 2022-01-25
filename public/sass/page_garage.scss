@@ -30,6 +30,7 @@ main{
 }
 
 .car{
+    position: absolute;
     width: 70px;
     height: 30px;
     -webkit-mask-image: url(../assets/car_.svg);
@@ -83,6 +84,7 @@ main{
 }
 
 .wrapper-car{
+    position: relative;
     display: flex;
     border-bottom: 2px dashed whitesmoke;
 }
