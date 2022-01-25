@@ -40,11 +40,6 @@ main{
     mask-repeat: no-repeat;
     padding-left: 19px;
 }
-
-.wrapper-car{
-    border-bottom: 2px, dashed whitesmoke;
-}
-
 .name-car{
     padding-left: 5px;
     color: yellowgreen;
@@ -78,4 +73,5 @@ main{
 
 .wrapper-car{
     display: flex;
+    border-bottom: 2px dashed whitesmoke;
 }
