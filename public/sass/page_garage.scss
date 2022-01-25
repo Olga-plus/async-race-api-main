@@ -39,6 +39,8 @@ main{
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     padding-left: 19px;
+    animation-duration: 3s;
+    animation-name: slidein;
 }
 .name-car{
     padding-left: 5px;
@@ -76,8 +78,6 @@ main{
 .wrapper-car{
     display: flex;
     border-bottom: 2px dashed whitesmoke;
-    animation-duration: 3s;
-    animation-name: slidein;
 }
 
 @keyframes slidein {
