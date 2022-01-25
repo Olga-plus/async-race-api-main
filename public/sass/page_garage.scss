@@ -24,10 +24,8 @@ main{
     height: 20px;
     background: yellowgreen;
     background-color: yellowgreen;
-    -webkit-mask-image: url(car_.svg);
-    mask-image: url('car_.svg');
-
-
+    -webkit-mask-image: url(../assets/car_.svg);
+    mask-image: url('../assets/car_.svg');
 }
 
 .btn {
