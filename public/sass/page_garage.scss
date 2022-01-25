@@ -25,7 +25,7 @@ main{
 .wrapper{
     display: flex;
     align-items: center;
-    padding: 15px 0;
+    padding: 5px 0;
     width: 100%;
 }
 
@@ -43,12 +43,14 @@ main{
 .name-car{
     text-transform: uppercase;
     padding-left: 5px;
+    color: yellowgreen;
+    font-weight: 700;
 }
 
 .btn {
     padding: 0 7px;
     margin: 5px;
-    background-color:rgb(0, 118, 118);
+    background-color:rgb(197, 0, 181);
     border-radius: 5px;
 }
 
