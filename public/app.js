@@ -14,9 +14,6 @@ buttonGarage.onclick = function() {
 function listCar (){
     fetch('http://localhost:3000/garage')
     .then(response => response.json())
-    .then(result => {
-        listCar ();
-    })
 }
 
 async function createGaragePage (result){

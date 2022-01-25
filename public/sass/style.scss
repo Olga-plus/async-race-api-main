@@ -1,6 +1,4 @@
 @import "node_modules/normalize-scss/sass/normalize";
 @include normalize();
 
-@import './page_garage.scss';
-
-@import '../page_garage.scss';
+@import '../sass/page_garage.scss';
