@@ -59,7 +59,7 @@ main{
     text-transform: uppercase;
     color: whitesmoke;
     border: none;
-    padding: 3px;
+    padding: 3px, 5px;
 }
 
 .btn-ab{
@@ -69,7 +69,11 @@ main{
     background: none;
 }
 
-
+.input_ {
+    border: none;
+    background-color: whitesmoke;
+    border-radius: 15px;
+}
 
 .wrapper-car{
     display: flex;
