@@ -38,10 +38,11 @@ main{
     mask-size: 100%;
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
+    padding-left: 19px;
 }
 
 .name-car{
-    text-transform: uppercase;
+    
     padding-left: 5px;
     color: yellowgreen;
     font-weight: 700;
@@ -52,6 +53,7 @@ main{
     margin: 5px;
     background-color:rgb(197, 0, 181);
     border-radius: 5px;
+    text-transform: uppercase;
 }
 
 .wrapper-car{
