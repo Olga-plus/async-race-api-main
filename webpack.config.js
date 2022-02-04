@@ -7,7 +7,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 
 const baseConfig = {
-  entry: [ path.resolve(__dirname, './public/app.js'), path.resolve(__dirname, './public/sass/style.scss')],
+  entry: [ path.resolve(__dirname, './public/app.ts'), path.resolve(__dirname, './public/sass/style.scss')],
   mode: 'development',
   module: {
     rules: [
