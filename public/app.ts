@@ -18,5 +18,21 @@ function callbackCar() {
         case 'select':
             console.log(this.id);
             break;
+
+    case 'started':
+        console.log(this.id);
+        fetch(`http://localhost:3000/engine?id=${this.id}&status=${this.evtType}`, {
+            method: 'PATCH',
+        }).then(response => response.json()) 
+        .then(result => console.log(result))
+        break;
+
+    case 'stopped':
+        console.log(this.id);
+        fetch(`http://localhost:3000/engine?id=${this.id}&status=${this.evtType}`, {
+            method: 'PATCH',
+        }).then(response => response.json()) 
+        .then(result => console.log(result))
+        break;
     }
 }
