@@ -24,7 +24,9 @@ function callbackCar() {
         fetch(`http://localhost:3000/engine?id=${this.id}&status=${this.evtType}`, {
             method: 'PATCH',
         }).then(response => response.json()) 
-        .then(result => console.log(result))
+        .then(result => {
+            this.car.style.left = `${result.velocity}`;
+            console.log(result.velocity, )})
         break;
 
     case 'stopped':
