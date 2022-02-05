@@ -1,8 +1,11 @@
+import { node } from "webpack";
+import { Car } from "./Cars";
+
 const body = document.querySelector('body')
 export class PageGarage {
     btnCreate: HTMLButtonElement;
     btnUpdate: HTMLButtonElement;
-    main: HTMLElement;
+    sectionMenu: HTMLElement;
     buttonWinners: HTMLButtonElement;
     buttonGarage: HTMLButtonElement;
     btnRace: HTMLButtonElement;
@@ -27,7 +30,7 @@ export class PageGarage {
     
         header.append(this.buttonGarage, this.buttonWinners);
     
-        this.main = document.createElement('main');
+        this.sectionMenu = document.createElement('section');
         const wrapperInputCreate = document.createElement('div');
         wrapperInputCreate.className = "wrapper";
         const inputCreate = document.createElement('input');
@@ -49,6 +52,7 @@ export class PageGarage {
         inputUpdate.className = "inputs";
         inputUpdate.id = "updateCarName";
         inputUpdate.type = "text";
+        
         const inputColorUpdate = document.createElement('input');
         inputColorUpdate.className = "inputs";
         inputColorUpdate.id = "updateCarColor";
@@ -71,18 +75,16 @@ export class PageGarage {
 
         wrapperInputUpdate.append(inputUpdate, inputColorUpdate, this.btnUpdate);
         
-        const pageGarage = document.createElement('div');
-        pageGarage.className = 'page-garage';
-        pageGarage.innerText = 'Page #1'; ///
-        this.main.append(pageGarage, wrapperInputCreate, wrapperInputUpdate, this.btnRace, this.btnReset, this.btnGenerate);
-        body.append(header, this.main);
+        const pageGarageNumber = document.createElement('div');
+        pageGarageNumber.className = 'page-garage';
+        pageGarageNumber.innerText = 'Page #1'; ///
+        this.sectionMenu.append(wrapperInputCreate, wrapperInputUpdate, this.btnRace, this.btnReset, this.btnGenerate, pageGarageNumber);
+        body.append(header, this.sectionMenu);
     }
-
 }
 
 export function pageGarage(){
     let garagePage = new PageGarage();
     return garagePage;
-} 
-export let garage = pageGarage();
+}
 

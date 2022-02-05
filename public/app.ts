@@ -1,10 +1,12 @@
 import { cars } from "./Cars";
-import { garage } from "./PageGarage";
+import {pageGarage} from "./PageGarage";
+export const body =  document.querySelector('body');
 
-const body =  document.querySelector('body');
+pageGarage();
 cars(callbackCar);
+    // console.log(carss);
 
-function callbackCar() {
+function callbackCar(): void {
     switch(this.evtType){
         case 'remove':
             fetch(`http://localhost:3000/garage/${this.id}`, {
@@ -12,23 +14,11 @@ function callbackCar() {
                 }).then(response => response.json())
                 .then(result => {
                     result;
-                    // location.reload(); // ------------------???????????????????
                 });
             break;
         case 'select':
-            console.log(this.id);
+            console.log(this);
             break;
-
-    case 'started':
-        console.log(this.id);
-        fetch(`http://localhost:3000/engine?id=${this.id}&status=${this.evtType}`, {
-            method: 'PATCH',
-        }).then(response => response.json()) 
-        .then(result => {
-            this.car.style.left = `${result.velocity}`;
-            console.log(result.velocity, )})
-        break;
-
     case 'stopped':
         console.log(this.id);
         fetch(`http://localhost:3000/engine?id=${this.id}&status=${this.evtType}`, {

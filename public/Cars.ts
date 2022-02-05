@@ -1,12 +1,4 @@
-import { garage } from "./PageGarage";
-
-interface CarInterface {
-    name: string; color: string; id: number
-}
-
-
-const main: HTMLElement = garage.main;
-
+import {body} from './app';
 export class Car {
     callback: () => void;
     name: string;
@@ -18,6 +10,7 @@ export class Car {
     evtType: string = null;
     btnA: HTMLButtonElement;
     btnB: HTMLButtonElement;
+    drive:boolean;
 
     constructor({ name, color, id }: { name: string; color: string; id: number; }, callback: () => void){
         this.name = name;
@@ -25,7 +18,6 @@ export class Car {
         this.id = id;
         this.renderCar();
         this.callback = callback;
-
     }
 
     eventType(){
@@ -34,9 +26,9 @@ export class Car {
 
     renderCar() {
 
-        const carContainer = document.createElement('div');
+        const carContainer = document.createElement('section');
         carContainer.className = 'car-container';
-        main.appendChild(carContainer);
+        body.appendChild(carContainer);
 
         const wrapperBtn = document.createElement('div');
         wrapperBtn.className = 'wrapper';
@@ -96,7 +88,13 @@ export class Car {
 
     start(){
         this.evtType = 'started';
-        this.callback();
+        console.log(this.id);
+        fetch(`http://localhost:3000/engine?id=${this.id}&status=${this.evtType}`, {
+            method: 'PATCH',
+        }).then(response => response.json()) 
+        .then(result => {
+            this.car.style.left = `${result.velocity}`;
+            console.log(result.velocity)})
     }
 
     stop(){
@@ -105,14 +103,14 @@ export class Car {
     }
 }
 
-
-export function cars(callbackCar:any) {
-    fetch('http://localhost:3000/garage')
-        .then(response => response.json())
-        .then(result => {
-            result.forEach((elem: CarInterface) => {
-                let car = new Car(elem, callbackCar);
-            });
-            
-        });
-}
+export function cars(callbackCar:()=> void) {
+    return fetch('http://localhost:3000/garage')
+          .then(response => response.json())
+          .then(result => {
+              result.forEach((elem: Car) => {
+                  let car = new Car(elem, callbackCar);
+                  return car;
+              });
+              console.log(result)
+          });
+  }
