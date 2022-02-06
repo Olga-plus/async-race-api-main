@@ -11,6 +11,8 @@ export class Car {
     btnA: HTMLButtonElement;
     btnB: HTMLButtonElement;
     drive:boolean;
+    timestamp: number;
+    start: number;
 
     constructor({ name, color, id }: { name: string; color: string; id: number; }, callback: () => void){
         this.name = name;
@@ -70,9 +72,9 @@ export class Car {
         this.removeButton.onclick = this.remove.bind(this);
         this.selectButton.onclick = this.select.bind(this);
 
-        this.btnA.onclick = this.start.bind(this);
+        this.btnA.onclick = this.started.bind(this);
         this.btnB.onclick = this.stop.bind(this);
-        
+        this.start = null;
     }
 
     remove(){
@@ -86,21 +88,32 @@ export class Car {
         this.callback();
     }
 
-    start(){
+    started(){
         this.evtType = 'started';
         console.log(this.id);
         fetch(`http://localhost:3000/engine?id=${this.id}&status=${this.evtType}`, {
             method: 'PATCH',
         }).then(response => response.json()) 
         .then(result => {
-            this.car.style.left = `${result.velocity}`;
-            console.log(result.velocity)})
+        console.log(this.start);
+           this.timestamp = result.distance / result.velocity;
+           window.requestAnimationFrame(this.step.bind(this));
+            console.log(result)})
     }
 
     stop(){
         this.evtType = 'stopped';
         this.callback();
     }
+    step(timestamp: number) {
+        console.log('ggg', !this.start);
+        if (!this.start) this.start = timestamp;
+        var progress = timestamp - this.start;
+        this.car.style.transform = 'translateX(' + Math.min(progress / 10, 200) + 'px)';
+        if (progress < 2000) {
+          window.requestAnimationFrame(this.step.bind(this));
+        }
+      }
 }
 
 export function cars(callbackCar:()=> void) {
