@@ -110,11 +110,10 @@ export class Car {
         if (!this.start) this.start = timestamp;
         var progresstime = timestamp - this.start;
         this.car.style.transform = 'translateX(' + Math.min(progresstime / 10) + '%)';
-        console.log('translateX(' + Math.min(progresstime / 10) + '%)');
         if (progresstime < this.timestamp) {
           window.requestAnimationFrame(this.step.bind(this));
         }
-      }
+    }
 }
 
 export function cars(callbackCar:()=> void) {
