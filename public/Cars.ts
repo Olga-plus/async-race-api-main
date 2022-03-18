@@ -103,6 +103,7 @@ export class Car {
 
     stop(){
         this.evtType = 'stopped';
+        this.car.style.transform = 'translateX(0%)';
         this.callback();
     }
     step(timestamp: number) {
