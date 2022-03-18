@@ -105,12 +105,11 @@ export class Car {
         this.evtType = 'stopped';
         this.callback();
     }
-    step() {
+    step(timestamp: number) {
         console.log('ggg', !this.start);
-        if (!this.start) this.start = this.timestamp;
-        var progresstime = this.timestamp - this.start;
+        if (!this.start) this.start = timestamp;
+        var progresstime = timestamp - this.start;
         this.car.style.transform = 'translateX(' + Math.min(progresstime / 10, 200) + 'px)';
-        // console.log('translateX(' + Math.min(progresstime / 10, 200) + 'px)')
         if (progresstime < 2000) {
           window.requestAnimationFrame(this.step.bind(this));
         }
