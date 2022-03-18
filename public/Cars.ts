@@ -98,7 +98,7 @@ export class Car {
         console.log(this.start);
            this.timestamp = result.distance / result.velocity;
            window.requestAnimationFrame(this.step.bind(this));
-            console.log(result, 'funStarted')})
+            console.log(result)})
     }
 
     stop(){
@@ -110,7 +110,7 @@ export class Car {
         if (!this.start) this.start = timestamp;
         var progresstime = timestamp - this.start;
         this.car.style.transform = 'translateX(' + Math.min(progresstime / 10, 200) + 'px)';
-        if (progresstime < timestamp) {
+        if (progresstime < 2000) {
           window.requestAnimationFrame(this.step.bind(this));
         }
       }
