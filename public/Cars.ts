@@ -98,7 +98,7 @@ export class Car {
         console.log(this.start);
            this.timestamp = result.distance / result.velocity;
            window.requestAnimationFrame(this.step.bind(this));
-            console.log(result)})
+            console.log(result, 'funStarted')})
     }
 
     stop(){
@@ -107,8 +107,8 @@ export class Car {
     }
     step(timestamp: number) {
         console.log('ggg', !this.start);
-        if (!this.start) this.start = timestamp;
-        var progresstime = timestamp - this.start;
+        if (!this.start) this.start = this.timestamp;
+        var progresstime = this.timestamp - this.start;
         this.car.style.transform = 'translateX(' + Math.min(progresstime / 10, 200) + 'px)';
         if (progresstime < this.timestamp) {
           window.requestAnimationFrame(this.step.bind(this));
