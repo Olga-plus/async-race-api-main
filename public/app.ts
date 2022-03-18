@@ -19,12 +19,12 @@ function callbackCar(): void {
         case 'select':
             console.log(this);
             break;
-    case 'stopped':
+        case 'stopped':
         console.log(this.id);
         fetch(`http://localhost:3000/engine?id=${this.id}&status=${this.evtType}`, {
             method: 'PATCH',
         }).then(response => response.json()) 
-        .then(result => console.log(result))
+        .then(result => console.log(result));
         break;
     }
 }
