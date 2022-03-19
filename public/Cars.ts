@@ -125,6 +125,6 @@ export function cars(callbackCar:()=> void) {
                   let car = new Car(elem, callbackCar);
                   return car;
               });
-              console.log(result)
+              console.log(result, 'function cars')
           });
   }
