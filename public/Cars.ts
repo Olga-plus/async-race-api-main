@@ -95,7 +95,7 @@ export class Car {
             method: 'PATCH',
         }).then(response => response.json()) 
         .then(result => {
-        console.log(this.start);
+        console.log(this.start, result);
            this.timestamp = result.distance / result.velocity;
            window.requestAnimationFrame(this.step.bind(this));
             console.log(result)})
