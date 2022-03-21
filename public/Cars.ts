@@ -109,14 +109,14 @@ export class Car {
         .then(result => {
         console.log(this.start, result);
            this.timestamp = 0;
-           window.requestAnimationFrame(this.step.bind(this));
+          (this.step.bind(this));
             console.log(result)})
     }
 
     step(timestamp: number) {
         console.log('step', !this.start, this.timestamp);
         if (!this.start) this.start = timestamp;
-        var progresstime = timestamp - this.start;
+        let progresstime = timestamp - this.start;
         this.car.style.transform = 'translateX(' + Math.min(progresstime / 10) + 'px)';
         if (progresstime < this.timestamp) {
           window.requestAnimationFrame(this.step.bind(this));
