@@ -119,6 +119,7 @@ export class Car {
         let progresstime;
         if (this.evtType === 'stopped'){
             this.car.style.transform = 'translateX(0px)';
+            this.start = null;
         }
         if (this.evtType === 'started'){
             if (!this.start) this.start = timestamp;
