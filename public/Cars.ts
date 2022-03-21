@@ -115,10 +115,6 @@ export class Car {
 
     step(timestamp: number) {
         console.log('step', !this.start, this.timestamp);
-        if (this.start){
-            this.start = 0;
-            this.car.style.transform = 'translateX(0px)';
-        } 
         if (!this.start) this.start = timestamp;
         var progresstime = timestamp - this.start;
         this.car.style.transform = 'translateX(' + Math.min(progresstime / 10) + 'px)';
