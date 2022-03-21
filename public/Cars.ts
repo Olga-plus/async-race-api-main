@@ -108,7 +108,7 @@ export class Car {
         }).then(response => response.json()) 
         .then(result => {
         console.log(this.start, result);
-           this.timestamp = result.distance / result.velocity;
+           this.timestamp = 0;
            window.requestAnimationFrame(this.step.bind(this));
             console.log(result)})
     }
