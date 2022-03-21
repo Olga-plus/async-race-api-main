@@ -102,27 +102,31 @@ export class Car {
     }
 
     stop(){
-        this.car.style.transform = 'translateX(0px)';
         this.evtType = 'stopped';
-        // fetch(`http://localhost:3000/engine?id=${this.id}&status=${this.evtType}`, {
-        //     method: 'PATCH',
-        // }).then(response => response.json()) 
-        // .then(result => {
-        // console.log(this.start, result);
-        //    this.timestamp = 0;
-           
-        // //    window.requestAnimationFrame(this.step.bind(this));
-        // })
+        fetch(`http://localhost:3000/engine?id=${this.id}&status=${this.evtType}`, {
+            method: 'PATCH',
+        }).then(response => response.json()) 
+        .then(result => {
+        console.log(this.start, result, 'newStopp');
+           this.timestamp = 0;
+           this.car.style.transform = 'translateX(0px)';
+           window.requestAnimationFrame(this.step.bind(this));
+        })
     }
 
     step(timestamp: number) {
+
         let progresstime;
-        console.log('step', !this.start, this.timestamp);
-        if (!this.start) this.start = timestamp;
-        progresstime = timestamp - this.start;
-        this.car.style.transform = 'translateX(' + Math.min(progresstime / 10) + 'px)';
-        if (progresstime < this.timestamp) {
-          window.requestAnimationFrame(this.step.bind(this));
+        if (this.evtType === 'stopped'){
+            this.car.style.transform = 'translateX(0px)';
+        }
+        if (this.evtType === 'stopped'){
+            if (!this.start) this.start = timestamp;
+            progresstime = timestamp - this.start;
+            this.car.style.transform = 'translateX(' + Math.min(progresstime / 10) + 'px)';
+            if (progresstime < this.timestamp) {
+              window.requestAnimationFrame(this.step.bind(this));
+            }
         }
     }
 }
