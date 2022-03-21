@@ -103,8 +103,14 @@ export class Car {
 
     stop(){
         this.evtType = 'stopped';
-        this.car.style.transform = 'translateX(0)';
-        this.callback();
+        fetch(`http://localhost:3000/engine?id=${this.id}&status=${this.evtType}`, {
+            method: 'PATCH',
+        }).then(response => response.json()) 
+        .then(result => {
+        console.log(this.start, result);
+           this.timestamp = result.distance / result.velocity;
+           window.requestAnimationFrame(this.step.bind(this));
+            console.log(result)})
     }
 
     step(timestamp: number) {
