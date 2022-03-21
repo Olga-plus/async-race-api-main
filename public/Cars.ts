@@ -120,7 +120,7 @@ export class Car {
         if (this.evtType === 'stopped'){
             this.car.style.transform = 'translateX(0px)';
         }
-        if (this.evtType === 'stopped'){
+        if (this.evtType === 'started'){
             if (!this.start) this.start = timestamp;
             progresstime = timestamp - this.start;
             this.car.style.transform = 'translateX(' + Math.min(progresstime / 10) + 'px)';
