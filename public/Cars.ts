@@ -110,12 +110,15 @@ export class Car {
         console.log(this.start, result);
            this.timestamp = 0;
            window.requestAnimationFrame(this.step.bind(this));
-           this.car.style.transform = 'translateX(' + 0 + 'px)';
             console.log(result)})
     }
 
     step(timestamp: number) {
         console.log('step', !this.start, this.timestamp);
+        if (this.start){
+            this.start = 0;
+            this.car.style.transform = 'translateX(0px)';
+        } 
         if (!this.start) this.start = timestamp;
         var progresstime = timestamp - this.start;
         this.car.style.transform = 'translateX(' + Math.min(progresstime / 10) + 'px)';
