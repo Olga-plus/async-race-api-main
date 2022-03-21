@@ -102,16 +102,17 @@ export class Car {
     }
 
     stop(){
+        this.car.style.transform = 'translateX(0px)';
         this.evtType = 'stopped';
-        fetch(`http://localhost:3000/engine?id=${this.id}&status=${this.evtType}`, {
-            method: 'PATCH',
-        }).then(response => response.json()) 
-        .then(result => {
-        console.log(this.start, result);
-           this.timestamp = 0;
-           this.car.style.transform = 'translateX(0px)';
-        //    window.requestAnimationFrame(this.step.bind(this));
-        })
+        // fetch(`http://localhost:3000/engine?id=${this.id}&status=${this.evtType}`, {
+        //     method: 'PATCH',
+        // }).then(response => response.json()) 
+        // .then(result => {
+        // console.log(this.start, result);
+        //    this.timestamp = 0;
+           
+        // //    window.requestAnimationFrame(this.step.bind(this));
+        // })
     }
 
     step(timestamp: number) {
