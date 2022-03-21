@@ -27,8 +27,7 @@ export class Car {
     }
 
     renderCar() {
-
-        const carContainer = document.createElement('section');
+        const carContainer = document.createElement('div');
         carContainer.className = 'car-container';
         body.appendChild(carContainer);
 

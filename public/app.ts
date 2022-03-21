@@ -14,7 +14,9 @@ function callbackCar(): void {
                 }).then(response => response.json())
                 .then(result => {
                     result;
+                    body.innerHTML = '';
                     pageGarage();
+                    cars(callbackCar);
                 });
             break;
         case 'select':
