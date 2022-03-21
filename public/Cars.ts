@@ -109,8 +109,8 @@ export class Car {
         .then(result => {
         console.log(this.start, result);
            this.timestamp = 0;
-          (this.step.bind(this));
-            console.log(result)})
+           window.requestAnimationFrame(this.step.bind(this));
+        })
     }
 
     step(timestamp: number) {
