@@ -109,8 +109,8 @@ export class Car {
         .then(result => {
         console.log(this.start, result);
            this.timestamp = 0;
-           window.requestAnimationFrame(this.step.bind(this));
            this.car.style.transform = 'translateX(0px)';
+        //    window.requestAnimationFrame(this.step.bind(this));
         })
     }
 
