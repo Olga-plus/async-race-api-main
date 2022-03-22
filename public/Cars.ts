@@ -100,7 +100,14 @@ export class Car {
            this.timestamp = result.distance / result.velocity;
            fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
             method: 'PATCH',
-        }).then(response => response.json()) 
+        }).then(response => {
+            if(response.status === 500){
+            return null;
+                } else {
+                    response.json()
+                }
+            }
+        )
           .then(result => {
             this.drive = result;
             console.log(result, '<---')
