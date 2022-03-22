@@ -132,7 +132,7 @@ export class Car {
             if (!this.start) this.start = timestamp;
             progresstime = timestamp - this.start;
             this.car.style.transform = 'translateX(' + Math.min(progresstime / 10) + 'px)';
-            if (progresstime < this.timestamp && ) {
+            if (progresstime < this.timestamp && this.drive) {
               window.requestAnimationFrame(this.step.bind(this));
             }
         }
