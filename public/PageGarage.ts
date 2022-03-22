@@ -81,6 +81,7 @@ export class PageGarage {
         this.sectionMenu.append(wrapperInputCreate, wrapperInputUpdate, this.btnRace, this.btnReset, this.btnGenerate, pageGarageNumber);
         body.append(header, this.sectionMenu);
     }
+
 }
 
 export function pageGarage(){

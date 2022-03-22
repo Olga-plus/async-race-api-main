@@ -74,6 +74,8 @@ export class Car {
         this.btnA.onclick = this.started.bind(this);
         this.btnB.onclick = this.stop.bind(this);
         this.start = null;
+        this.drive = true;
+
     }
 
     remove(){
@@ -93,9 +95,15 @@ export class Car {
         fetch(`http://localhost:3000/engine?id=${this.id}&status=${this.evtType}`, {
             method: 'PATCH',
         }).then(response => response.json()) 
-        .then(result => {
-        console.log(this.start, result);
+          .then(result => {
+        console.log(this.start, result, 'newww');
            this.timestamp = result.distance / result.velocity;
+           fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
+            method: 'PATCH',
+        }).then(response => response.json()) 
+          .then(result => {
+            console.log(result, '<<<<')
+        });
            window.requestAnimationFrame(this.step.bind(this));
             console.log(result)})
     }
@@ -124,7 +132,7 @@ export class Car {
             if (!this.start) this.start = timestamp;
             progresstime = timestamp - this.start;
             this.car.style.transform = 'translateX(' + Math.min(progresstime / 10) + 'px)';
-            if (progresstime < this.timestamp) {
+            if (progresstime < this.timestamp && ) {
               window.requestAnimationFrame(this.step.bind(this));
             }
         }
