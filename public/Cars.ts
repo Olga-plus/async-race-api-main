@@ -101,10 +101,10 @@ export class Car {
            fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
             method: 'PATCH',
         }).then(response => {
-            if(response.status === 200){
-                response.json()
+            if(response.status !== 200){
+            return null;
                 } else {
-                    return null;
+                    response.json()
                 }
             }
         )
