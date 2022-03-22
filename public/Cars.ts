@@ -104,7 +104,7 @@ export class Car {
             if(response.status !== 200){
             return null;
                 } else {
-                   return response.json()
+                   return true;
                 }
             }
         )
