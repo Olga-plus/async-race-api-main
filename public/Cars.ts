@@ -104,13 +104,13 @@ export class Car {
             if(response.status !== 200){
             return null;
                 } else {
-                    response.json()
+                   return response.json()
                 }
             }
         )
           .then(result => {
             this.drive = result;
-            console.log(result, '<---')
+            console.log(result, '<--+')
         });
            window.requestAnimationFrame(this.step.bind(this));
             console.log(result)})
