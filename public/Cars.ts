@@ -96,7 +96,6 @@ export class Car {
             method: 'PATCH',
         }).then(response => response.json()) 
           .then(result => {
-        console.log(this.start, result, 'newww');
            this.timestamp = result.distance / result.velocity;
            fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
             method: 'PATCH',
