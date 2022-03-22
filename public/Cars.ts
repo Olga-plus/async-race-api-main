@@ -102,7 +102,8 @@ export class Car {
             method: 'PATCH',
         }).then(response => response.json()) 
           .then(result => {
-            console.log(result, '<<<<')
+            this.drive = result;
+            console.log(result, '<---')
         });
            window.requestAnimationFrame(this.step.bind(this));
             console.log(result)})
