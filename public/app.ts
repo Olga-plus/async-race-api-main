@@ -4,7 +4,7 @@ export const body =  document.querySelector('body');
 
 const garageP = pageGarage();
 cars(callbackCar);
-    // console.log(garageP);
+    console.log(garageP);
 
 function callbackCar(): void {
     switch(this.evtType){
