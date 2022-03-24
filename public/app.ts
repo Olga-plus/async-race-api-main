@@ -4,7 +4,7 @@ export const body =  document.querySelector('body');
 
 const garageP = pageGarage();
 cars(callbackCar);
-    console.log(garageP.inputDisable = false);
+    console.log(garageP.btnCreate);
 
 function callbackCar(): void {
     switch(this.evtType){
@@ -21,6 +21,9 @@ function callbackCar(): void {
             break;
         case 'select':
             garageP.inputDisable = false;
+            body.innerHTML = '';
+            pageGarage();
+            cars(callbackCar);
             console.log(this.id);
 
         break;
