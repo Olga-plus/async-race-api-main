@@ -11,6 +11,7 @@ export class PageGarage {
     btnRace: HTMLButtonElement;
     btnReset: HTMLButtonElement;
     btnGenerate: HTMLButtonElement;
+    inputDisable: boolean = true;
 
     constructor(){
         this.createGaragePage();
@@ -37,7 +38,7 @@ export class PageGarage {
         inputCreate.className = "inputs";
         inputCreate.id = "createCarName";
         inputCreate.type = "text";
-        
+
         const inputColorCreate = document.createElement('input');
         inputColorCreate.className = "inputs";
         inputColorCreate.id = "createCarColor";
@@ -53,12 +54,13 @@ export class PageGarage {
         inputUpdate.className = "inputs";
         inputUpdate.id = "updateCarName";
         inputUpdate.type = "text";
-        inputUpdate.disabled = true;
+        inputUpdate.disabled = this.inputDisable;
 
         const inputColorUpdate = document.createElement('input');
         inputColorUpdate.className = "inputs";
         inputColorUpdate.id = "updateCarColor";
         inputColorUpdate.type = "color";
+        inputColorUpdate.disabled = this.inputDisable;
         this.btnUpdate = document.createElement('button');
         this.btnUpdate.className = "btn create-btn";
         this.btnUpdate.innerText = "update";
