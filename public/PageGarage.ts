@@ -37,12 +37,11 @@ export class PageGarage {
         inputCreate.className = "inputs";
         inputCreate.id = "createCarName";
         inputCreate.type = "text";
-        inputCreate.disabled = true;
+        
         const inputColorCreate = document.createElement('input');
         inputColorCreate.className = "inputs";
         inputColorCreate.id = "createCarColor";
         inputColorCreate.type = "color";
-        inputColorCreate.disabled = true;
         this.btnCreate = document.createElement('button');
         this.btnCreate.className = "btn create-btn";
         this.btnCreate.innerText = "create"
@@ -54,7 +53,8 @@ export class PageGarage {
         inputUpdate.className = "inputs";
         inputUpdate.id = "updateCarName";
         inputUpdate.type = "text";
-        
+        inputUpdate.disabled = true;
+
         const inputColorUpdate = document.createElement('input');
         inputColorUpdate.className = "inputs";
         inputColorUpdate.id = "updateCarColor";
