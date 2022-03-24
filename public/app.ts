@@ -7,9 +7,11 @@ export function pageGarage(){
     let garagePage = new PageGarage(callbackCar);
     return garagePage;
 }
+
+const garageP = pageGarage();
 pageGarage();
 cars(callbackCar);
-    // console.log(carss);
+    console.log(garageP);
 
 function callbackCar(): void {
     switch(this.evtType){
@@ -25,7 +27,7 @@ function callbackCar(): void {
                 });
             break;
         case 'select':
-           
+            
             console.log(this.id);
 
         break;
