@@ -4,7 +4,7 @@ export const body =  document.querySelector('body');
 
 const garageP = pageGarage();
 cars(callbackCar);
-    console.log(garageP);
+    console.log(garageP.inputDisable = false);
 
 function callbackCar(): void {
     switch(this.evtType){
@@ -20,7 +20,7 @@ function callbackCar(): void {
                 });
             break;
         case 'select':
-            
+            garageP.inputDisable = false;
             console.log(this.id);
 
         break;
