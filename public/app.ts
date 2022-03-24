@@ -7,6 +7,7 @@ export function pageGarage(){
     let garagePage = new PageGarage(callbackCar);
     return garagePage;
 }
+pageGarage();
 cars(callbackCar);
     // console.log(carss);
 
