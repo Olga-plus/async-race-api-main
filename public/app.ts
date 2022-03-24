@@ -6,7 +6,7 @@ export const body =  document.querySelector('body');
 pageGarage();
 cars(callbackCar);
     // console.log(carss);
-const updateCarName = document.querySelector('updateCarName')
+const updateCarName = document.querySelector('.updateCarName')
 function callbackCar(): void {
     switch(this.evtType){
         case 'remove':
