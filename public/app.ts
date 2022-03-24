@@ -1,12 +1,15 @@
 import { cars } from "./Cars";
-import {pageGarage} from "./PageGarage";
+import { PageGarage } from "./PageGarage";
 export const body =  document.querySelector('body');
 
 
-pageGarage();
+export function pageGarage(){
+    let garagePage = new PageGarage(callbackCar);
+    return garagePage;
+}
 cars(callbackCar);
     // console.log(carss);
-const updateCarName = document.querySelector('.updateCarName')
+
 function callbackCar(): void {
     switch(this.evtType){
         case 'remove':
@@ -22,7 +25,7 @@ function callbackCar(): void {
             break;
         case 'select':
            
-            console.log(this.id, updateCarName);
+            console.log(this.id);
 
         break;
     }

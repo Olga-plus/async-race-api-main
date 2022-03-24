@@ -12,9 +12,11 @@ export class PageGarage {
     btnReset: HTMLButtonElement;
     btnGenerate: HTMLButtonElement;
     inputDisable: boolean = true;
+    callback: () => void;
 
-    constructor(){
+    constructor(callback: () => void){
         this.createGaragePage();
+        this.callback = callback;
     }
 
     createGaragePage(){
@@ -86,10 +88,15 @@ export class PageGarage {
         body.append(header, this.sectionMenu);
     }
 
+    disaBle(){
+        this.inputDisable = false;
+        console.log('faaaalse');
+    }
+
 }
 
-export function pageGarage(){
-    let garagePage = new PageGarage();
-    return garagePage;
-}
+// export function pageGarage(){
+//     let garagePage = new PageGarage(callbackCar);
+//     return garagePage;
+// }
 
