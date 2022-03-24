@@ -37,6 +37,7 @@ export class PageGarage {
         inputCreate.className = "inputs";
         inputCreate.id = "createCarName";
         inputCreate.type = "text";
+        inputCreate.disabled = true;
         const inputColorCreate = document.createElement('input');
         inputColorCreate.className = "inputs";
         inputColorCreate.id = "createCarColor";
