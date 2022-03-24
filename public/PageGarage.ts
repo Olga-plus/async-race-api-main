@@ -41,6 +41,7 @@ export class PageGarage {
         inputColorCreate.className = "inputs";
         inputColorCreate.id = "createCarColor";
         inputColorCreate.type = "color";
+        inputColorCreate.disabled = false;
         this.btnCreate = document.createElement('button');
         this.btnCreate.className = "btn create-btn";
         this.btnCreate.innerText = "create"
