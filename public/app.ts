@@ -1,17 +1,10 @@
 import { cars } from "./Cars";
-import { PageGarage } from "./PageGarage";
+import { pageGarage} from "./PageGarage";
 export const body =  document.querySelector('body');
 
-
-export function pageGarage(){
-    let garagePage = new PageGarage(callbackCar);
-    return garagePage;
-}
-
 const garageP = pageGarage();
-pageGarage();
 cars(callbackCar);
-    console.log(garageP);
+    // console.log(garageP);
 
 function callbackCar(): void {
     switch(this.evtType){

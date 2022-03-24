@@ -14,9 +14,8 @@ export class PageGarage {
     inputDisable: boolean = true;
     callback: () => void;
 
-    constructor(callback: () => void){
+    constructor(){
         this.createGaragePage();
-        this.callback = callback;
     }
 
     createGaragePage(){
@@ -95,8 +94,8 @@ export class PageGarage {
 
 }
 
-// export function pageGarage(){
-//     let garagePage = new PageGarage(callbackCar);
-//     return garagePage;
-// }
+export function pageGarage(){
+    let garagePage = new PageGarage();
+    return garagePage;
+}
 
