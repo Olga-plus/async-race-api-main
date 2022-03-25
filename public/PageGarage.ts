@@ -87,10 +87,10 @@ export class PageGarage {
         body.append(header, this.sectionMenu);
     }
 
-    disaBle(){
-        this.inputDisable = false;
-        console.log('faaaalse');
-    }
+    // disaBle(){
+    //     this.inputDisable = false;
+    //     console.log('faaaalse');
+    // }
 
 }
 

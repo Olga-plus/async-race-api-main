@@ -3,7 +3,7 @@ import { pageGarage} from "./PageGarage";
 export const body =  document.querySelector('body');
 
 const garageP = pageGarage();
-cars(callbackCar);
+const arrsCars = cars(callbackCar);
     console.log(garageP.btnCreate);
 
 function callbackCar(): void {
@@ -20,11 +20,9 @@ function callbackCar(): void {
                 });
             break;
         case 'select':
-            garageP.inputDisable = false;
-            body.innerHTML = '';
-            pageGarage();
-            cars(callbackCar);
-            console.log(this.id);
+
+            // garageP.inputDisable = false;
+            console.log(this.id, garageP);
 
         break;
     }
