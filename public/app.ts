@@ -21,8 +21,8 @@ function callbackCar(): void {
             break;
         case 'select':
 
-            // garageP.inputDisable = false;
-            console.log(this.id, garageP);
+            garageP.inputDisable = false;
+            console.log(this.id, garageP.inputDisable);
 
         break;
     }
