@@ -2,9 +2,16 @@ import { cars } from "./Cars";
 import { pageGarage} from "./PageGarage";
 export const body =  document.querySelector('body');
 
-const garageP = pageGarage();
+const garageP = pageGarage(callbackGarage);
 const arrsCars = cars(callbackCar);
+
     console.log(garageP.inputDisable);
+
+function callbackGarage(): void {
+    console.log(this.inputDisable);
+   this.inputDisable = false;
+   console.log(this.inputDisable);
+}
 
 function callbackCar(): void {
     switch(this.evtType){
@@ -15,12 +22,12 @@ function callbackCar(): void {
                 .then(result => {
                     result;
                     body.innerHTML = '';
-                    pageGarage();
+                    pageGarage(callbackGarage);
                     cars(callbackCar);
                 });
             break;
         case 'select':
-            garageP.inputDisable = false;
+            
             console.log(this.id, garageP.inputDisable);
 
         break;
