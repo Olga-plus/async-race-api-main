@@ -12,7 +12,10 @@ export class PageGarage {
     btnReset: HTMLButtonElement;
     btnGenerate: HTMLButtonElement;
     inputCreate: HTMLInputElement;
-    inputColorCreate: HTMLInputElement
+    inputUpdate: HTMLInputElement;
+    inputColorCreate: HTMLInputElement;
+    inputColorUpdate: HTMLInputElement;
+
     inputDisable: boolean = true;
 
     callback: () => void;
@@ -56,17 +59,17 @@ export class PageGarage {
 
         const wrapperInputUpdate = document.createElement('div');
         wrapperInputUpdate.className = "wrapper";
-        const inputUpdate = document.createElement('input');
-        inputUpdate.className = "inputs";
-        inputUpdate.id = "updateCarName";
-        inputUpdate.type = "text";
-        inputUpdate.disabled = this.inputDisable;
+        this.inputUpdate = document.createElement('input');
+        this.inputUpdate.className = "inputs";
+        this.inputUpdate.id = "updateCarName";
+        this.inputUpdate.type = "text";
+        this.inputUpdate.disabled = this.inputDisable;
 
-        const inputColorUpdate = document.createElement('input');
-        inputColorUpdate.className = "inputs";
-        inputColorUpdate.id = "updateCarColor";
-        inputColorUpdate.type = "color";
-        inputColorUpdate.disabled = this.inputDisable;
+        this.inputColorUpdate = document.createElement('input');
+        this.inputColorUpdate.className = "inputs";
+        this.inputColorUpdate.id = "updateCarColor";
+        this.inputColorUpdate.type = "color";
+        this.inputColorUpdate.disabled = this.inputDisable;
         this.btnUpdate = document.createElement('button');
         this.btnUpdate.className = "btn create-btn";
         this.btnUpdate.innerText = "update";
@@ -83,7 +86,7 @@ export class PageGarage {
         this.btnGenerate.className = "btn generate-btn";
         this.btnGenerate.innerText = "generate";
 
-        wrapperInputUpdate.append(inputUpdate, inputColorUpdate, this.btnUpdate);
+        wrapperInputUpdate.append(this.inputUpdate, this.inputColorUpdate, this.btnUpdate);
         
         const pageGarageNumber = document.createElement('div');
         pageGarageNumber.className = 'page-garage';
@@ -130,7 +133,8 @@ export function pageGarage(){
                     });
                 break;
             case 'select':
-                garagePage.inputDisable = false;
+                garagePage.inputColorUpdate.disabled = false;
+                garagePage.inputUpdate.disabled = false;
                 body.innerHTML = '';
                 pageGarage();
                 console.log(this.id, garagePage.inputDisable, '<<<AAA');
