@@ -2,7 +2,6 @@ import { node } from "webpack";
 import { Car, cars } from "./Cars";
 
 const body = document.querySelector('body')
-let carrre = cars;
 export class PageGarage {
     btnCreate: HTMLButtonElement;
     btnUpdate: HTMLButtonElement;
@@ -110,7 +109,7 @@ export class PageGarage {
         .then(result => {
             result;
             body.innerHTML = '';
-            pageGarage();
+            //--------------------------------------------
         });
     }
 
@@ -127,18 +126,18 @@ export class PageGarage {
         .then(result => {
             result;
             body.innerHTML = '';
-            pageGarage();
+            //-----------------------------------------------------
         });
     }
 
     raseAll() {
-       console.log(carrre, '<<<<<<<<<<<<<<<<<<<<<<<<<');
+       console.log( '<<<<<<<<<<<<<<<<<<<<<<<<<');
     }
 }
 
-export function pageGarage(){
-    let garagePage = new PageGarage(callbackCar);
-    const arrsCars = cars(callbackCar);
+
+    export let garagePage = new PageGarage(callbackCar);
+    export const arrsCars = cars(callbackCar);
 
     function callbackCar(): void {
         switch(this.evtType){
@@ -149,7 +148,7 @@ export function pageGarage(){
                     .then(result => {
                         result;
                         body.innerHTML = '';
-                        pageGarage();
+                        //---------------------------------------11111
                     });
                 break;
             case 'select':
@@ -163,5 +162,4 @@ export function pageGarage(){
         }
     }
 
-    
-}
+
