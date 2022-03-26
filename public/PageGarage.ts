@@ -73,6 +73,7 @@ export class PageGarage {
         this.btnUpdate = document.createElement('button');
         this.btnUpdate.className = "btn create-btn";
         this.btnUpdate.innerText = "update";
+        this.btnUpdate.onclick = this.update.bind(this)
 
         this.btnRace = document.createElement('button');
         this.btnRace.className = "btn race-btn";
