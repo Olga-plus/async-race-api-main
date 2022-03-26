@@ -133,7 +133,10 @@ export class Car {
             this.start = null;
         }
         if (this.evtType === 'started' || 'drive'){
-            if (!this.start) this.start = timestamp;
+            if (!this.start) {
+                console.log(this.evtType, progresstime, this.drive, this.start, '222222')
+                this.start = timestamp;
+            }
             progresstime = timestamp - this.start;
             this.car.style.transform = 'translateX(' + Math.min(progresstime / 10) + 'px)';
             if (progresstime < this.timestamp && this.drive) {
