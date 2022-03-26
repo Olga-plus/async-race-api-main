@@ -139,6 +139,7 @@ export class Car {
             }
             progresstime = timestamp - this.start;
             this.car.style.transform = 'translateX(' + Math.min(progresstime / 10) + 'px)';
+            console.log(this.evtType, progresstime, this.drive, '111111111')
             if (progresstime < this.timestamp && this.drive) {
                 console.log(this.evtType, progresstime, this.drive, '111111111')
               window.requestAnimationFrame(this.step.bind(this));
