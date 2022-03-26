@@ -17,6 +17,7 @@ export class PageGarage {
     inputColorUpdate: HTMLInputElement;
 
     inputDisable: boolean = true;
+    id: number;
 
     callback: () => void;
 
@@ -112,7 +113,20 @@ export class PageGarage {
     }
 
     update() {
-        console.log(this, '<<<B');
+        console.log(this.id, '<<<BA');
+        fetch(`http://localhost:3000/garage/${this.id}`, {
+            method: 'PUT',
+            body: JSON.stringify({ name: this.inputCreate.value, color: this.inputColorCreate.value}),
+            headers: {
+                'content-type': 'application/json'
+            }
+
+                    }).then(response => response.json())
+                    .then(result => {
+                        result;
+                        body.innerHTML = '';
+                        pageGarage();
+                    });
     }
 
 }
@@ -137,6 +151,7 @@ export function pageGarage(){
                 garagePage.inputColorUpdate.removeAttribute("disabled");
                 garagePage.inputUpdate.removeAttribute("disabled");
                 garagePage.inputUpdate.focus();
+                garagePage.id = this.id;
                 console.log(this.id, garagePage.inputDisable, garagePage.inputColorUpdate, '<<<SAA');
             break;
         }
