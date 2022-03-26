@@ -1,5 +1,5 @@
 // import { cars } from "./Cars";
-import { pageGarage} from "./PageGarage";
+import { garagePage, arrsCars } from "./PageGarage";
 export const body =  document.querySelector('body');
 
-pageGarage();
+garagePage
