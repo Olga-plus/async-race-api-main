@@ -102,7 +102,7 @@ export class Car {
             })
             .then(response => response.json())
             .catch((err) => {
-              window.console.error(err);
+             console.log(err);
               throw err;
             })
         });
