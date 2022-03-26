@@ -102,12 +102,11 @@ export class Car {
             })
             .then(response =>{ 
                 response
-                window.requestAnimationFrame(this.step.bind(this));
+                this.drive = true;
             })
             .catch((err) => {
                 this.drive = false;
-                console.log(err);
-                throw err;
+                console.log("!!err");
             })
         });
     }
