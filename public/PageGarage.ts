@@ -1,7 +1,23 @@
 import { node } from "webpack";
-import { Car, cars } from "./Cars";
+import { Car } from "./Cars";
 
 const body = document.querySelector('body')
+
+    function cars(callbackCar:()=> void) {
+    return fetch('http://localhost:3000/garage')
+          .then(response => response.json())
+          .then(result => {
+              result.forEach((elem: Car) => {
+                  let car = new Car(elem, callbackCar);
+                  return car;
+              });
+              console.log(result, 'function carss')
+          });
+  }
+
+  let carsss = cars;
+  console.log(carsss)
+
 export class PageGarage {
     btnCreate: HTMLButtonElement;
     btnUpdate: HTMLButtonElement;
@@ -164,15 +180,4 @@ export function pageGarage(){
         }
     }
 
-//     export function cars(callbackCar:()=> void) {
-//     return fetch('http://localhost:3000/garage')
-//           .then(response => response.json())
-//           .then(result => {
-//               result.forEach((elem: Car) => {
-//                   let car = new Car(elem, callbackCar);
-//                   return car;
-//               });
-//               console.log(result, 'function carss')
-//           });
-//   }
 }
