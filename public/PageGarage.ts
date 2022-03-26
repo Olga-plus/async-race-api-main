@@ -108,8 +108,9 @@ export class PageGarage {
     }
 
     update() {
-        this.callback();
         console.log(this, '<<<B');
+        this.callback();
+        
     }
 
 }
@@ -121,7 +122,7 @@ export function pageGarage(){
 }
 
 function callbackCar(): void {
-    switch(this.evtType){
+    switch(this.id){
         case 'remove':
             fetch(`http://localhost:3000/garage/${this.id}`, {
                     method: 'DELETE',
