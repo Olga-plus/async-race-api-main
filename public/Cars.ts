@@ -104,7 +104,8 @@ export class Car {
                 if (response.status !== 200) {  
                     console.log('Status Code: ' +  
                     response.status); 
-                    return;  
+                    this.drive = false;
+                    return this.drive;  
                 }
             })
         });
