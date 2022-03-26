@@ -137,7 +137,7 @@ export class Car {
                 this.start = timestamp;
             }
             progresstime = timestamp - this.start;
-            let windoWidth = window.innerWidth;
+            let windoWidth = document.body.scrollWidth;
             let wayCar = Math.min(progresstime / 10)
             if (wayCar > windoWidth) {
                 this.car.style.transform = 'translateX(' + windoWidth + 'px)';
@@ -161,6 +161,6 @@ export function cars(callbackCar:()=> void) {
                   let car = new Car(elem, callbackCar);
                   return car;
               });
-              console.log(result, 'function carsaaa')
+              console.log(result, 'function carss')
           });
   }
