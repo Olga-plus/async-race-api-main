@@ -132,14 +132,13 @@ export class Car {
             this.car.style.transform = 'translateX(0px)';
             this.start = null;
         }
-        if (this.evtType === 'started' || 'drive'){
+        if (this.evtType === 'started'){
             if (!this.start) {
-                console.log(this.evtType, progresstime, this.drive, this.start, '222222')
                 this.start = timestamp;
             }
             progresstime = timestamp - this.start;
             this.car.style.transform = 'translateX(' + Math.min(progresstime / 10) + 'px)';
-            // console.log(this.evtType, progresstime, this.timestamp, this.drive, '33333333333')
+            // console.log(this.evtType, progresstime, this.timestamp, this.drive, '222222')
             if (progresstime < this.timestamp && this.drive) {
                 // console.log(this.evtType, progresstime, this.drive, '111111111')
               window.requestAnimationFrame(this.step.bind(this));
