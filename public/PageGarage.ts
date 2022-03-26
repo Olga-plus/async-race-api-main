@@ -80,6 +80,7 @@ export class PageGarage {
         this.btnRace = document.createElement('button');
         this.btnRace.className = "btn race-btn";
         this.btnRace.innerText = "race";
+        this.btnRace.onclick = this.raseAll.bind(this)
 
         this.btnReset = document.createElement('button');
         this.btnReset.className = "btn reset-btn";
