@@ -99,13 +99,13 @@ export class Car {
            window.requestAnimationFrame(this.step.bind(this));
             fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
                 method: 'PATCH',
-            }).then(response => {
-                // this.drive = response.ok
-                console.log( response.json(), '!<<<');
+            }).then(resolve => {
+                console.log(resolve, '<<<<');
+                resolve.json()
             })
-            .catch(error => {
+            .catch(reject => {
                 this.drive = false;
-                console.log('>>>', this.drive);
+                console.log('>>>', reject);
             });
         })
     }
