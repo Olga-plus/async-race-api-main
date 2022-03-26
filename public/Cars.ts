@@ -101,14 +101,13 @@ export class Car {
                 method: 'PATCH',
             })
             .then((response) => {  
+                this.evtType = 'drive';
                 if (response.status !== 200) {  
                     console.log('Status Code: ' +  
                     response.status); 
                     this.drive = false;
                     return this.drive;  
                 }
-                this.timestamp = result.distance / result.velocity;
-                window.requestAnimationFrame(this.step.bind(this));
             })
         });
     }
