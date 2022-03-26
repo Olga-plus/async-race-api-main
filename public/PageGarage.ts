@@ -133,6 +133,7 @@ export function pageGarage(){
                     });
                 break;
             case 'select':
+                garagePage.inputDisable=false;
                 garagePage.inputColorUpdate.disabled = false;
                 garagePage.inputUpdate.disabled = false;
                 body.innerHTML = '';
