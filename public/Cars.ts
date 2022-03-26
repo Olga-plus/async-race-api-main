@@ -107,6 +107,7 @@ export class Car {
                     this.drive = false;
                     return this.drive;  
                 }
+                return this.drive = true;
             })
         });
     }
