@@ -126,7 +126,6 @@ function callbackCar(): void {
                     result;
                     body.innerHTML = '';
                     pageGarage();
-                    cars(callbackCar);
                 });
             break;
         case 'select':
