@@ -93,9 +93,10 @@ export class PageGarage {
     }
 
     create() {
+        console.log(this.inputCreate.innerText, this.inputColorCreate.innerText)
         fetch(`http://localhost:3000/garage`, {
             method: 'POST',
-            body: JSON.stringify({ name: this.inputCreate.innerText, color: this.inputColorCreate }),
+            body: JSON.stringify({ name: this.inputCreate.innerText, color: this.inputColorCreate.innerText}),
             headers: {
                 'content-type': 'application/json'
             }
@@ -104,7 +105,6 @@ export class PageGarage {
             result;
             body.innerHTML = '';
             pageGarage();
-            cars(callbackCar);
         });
     }
 
