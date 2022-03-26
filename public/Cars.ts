@@ -100,12 +100,12 @@ export class Car {
             fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
                 method: 'PATCH',
             }).then(response => {
-                this.drive = response.ok
+                // this.drive = response.ok
                 console.log(this.drive);
             })
             .catch(error => {
                 this.drive = error.ok;
-                console.log(error.ok, this.drive);
+                console.log('>>>',error.ok, this.drive);
             });
         })
     }
