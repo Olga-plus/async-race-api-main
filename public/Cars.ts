@@ -137,7 +137,13 @@ export class Car {
                 this.start = timestamp;
             }
             progresstime = timestamp - this.start;
-            this.car.style.transform = 'translateX(' + Math.min(progresstime / 10) + 'px)';
+            let windoWidth = window.innerWidth;
+            let wayCar = Math.min(progresstime / 10)
+            if (wayCar > windoWidth) {
+                this.car.style.transform = 'translateX(' + windoWidth + 'px)';
+            } else {
+                this.car.style.transform = 'translateX(' + wayCar + 'px)';
+            }
             // console.log(this.evtType, progresstime, this.timestamp, this.drive, '222222')
             if (progresstime < this.timestamp && this.drive) {
                 // console.log(this.evtType, progresstime, this.drive, '111111111')
@@ -155,6 +161,6 @@ export function cars(callbackCar:()=> void) {
                   let car = new Car(elem, callbackCar);
                   return car;
               });
-              console.log(result, 'function cars')
+              console.log(result, 'function carsaaa')
           });
   }
