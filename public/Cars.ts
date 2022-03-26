@@ -101,7 +101,7 @@ export class Car {
                 method: 'PATCH',
             }).then(response => {
                 // this.drive = response.ok
-                console.log(this.drive);
+                console.log(this.drive, '<<<');
             })
             .catch(error => {
                 this.drive = error.ok;
