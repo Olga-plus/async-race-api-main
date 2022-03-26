@@ -96,7 +96,7 @@ export class PageGarage {
         console.log(this.inputCreate.innerText, this.inputColorCreate.innerText)
         fetch(`http://localhost:3000/garage`, {
             method: 'POST',
-            body: JSON.stringify({ name: this.inputCreate.innerText, color: this.inputColorCreate.innerText}),
+            body: JSON.stringify({ name: this.inputCreate.value, color: this.inputColorCreate.value}),
             headers: {
                 'content-type': 'application/json'
             }
