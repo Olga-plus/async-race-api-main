@@ -11,7 +11,10 @@ export class PageGarage {
     btnRace: HTMLButtonElement;
     btnReset: HTMLButtonElement;
     btnGenerate: HTMLButtonElement;
+    inputCreate: HTMLInputElement;
+    inputColorCreate: HTMLInputElement
     inputDisable: boolean = true;
+
     callback: () => void;
 
     constructor(){
@@ -36,19 +39,20 @@ export class PageGarage {
         this.sectionMenu = document.createElement('section');
         const wrapperInputCreate = document.createElement('div');
         wrapperInputCreate.className = "wrapper";
-        const inputCreate = document.createElement('input');
-        inputCreate.className = "inputs";
-        inputCreate.id = "createCarName";
-        inputCreate.type = "text";
+        this.inputCreate = document.createElement('input');
+        this.inputCreate.className = "inputs";
+        this.inputCreate.id = "createCarName";
+        this.inputCreate.type = "text";
 
-        const inputColorCreate = document.createElement('input');
-        inputColorCreate.className = "inputs";
-        inputColorCreate.id = "createCarColor";
-        inputColorCreate.type = "color";
+        this.inputColorCreate = document.createElement('input');
+        this.inputColorCreate.className = "inputs";
+        this.inputColorCreate.id = "createCarColor";
+        this.inputColorCreate.type = "color";
         this.btnCreate = document.createElement('button');
         this.btnCreate.className = "btn create-btn";
         this.btnCreate.innerText = "create"
-        wrapperInputCreate.append(inputCreate,inputColorCreate, this.btnCreate);
+        wrapperInputCreate.append( this.inputCreate, this.inputColorCreate, this.btnCreate);
+        this.btnCreate.onclick = this.create.bind(this)
 
         const wrapperInputUpdate = document.createElement('div');
         wrapperInputUpdate.className = "wrapper";
@@ -88,10 +92,21 @@ export class PageGarage {
         body.append(header, this.sectionMenu);
     }
 
-    // disaBle(){
-    //     this.inputDisable = false;
-    //     console.log('faaaalse');
-    // }
+    create() {
+        fetch(`http://localhost:3000/garage`, {
+            method: 'POST',
+            body: JSON.stringify({ name: this.inputCreate.innerText, color: this.inputColorCreate }),
+            headers: {
+                'content-type': 'application/json'
+            }
+        }).then(response => response.json())
+        .then(result => {
+            result;
+            body.innerHTML = '';
+            pageGarage();
+            cars(callbackCar);
+        });
+    }
 
 }
 
