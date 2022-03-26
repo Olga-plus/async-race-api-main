@@ -85,7 +85,7 @@ export class Car {
     select(){
         this.evtType = 'select';
         console.log( this.evtType )
-        this.callback();
+        this.callback( );
     }
 
     started(){

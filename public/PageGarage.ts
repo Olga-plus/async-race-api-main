@@ -109,7 +109,6 @@ export class PageGarage {
 
     update() {
         console.log(this, '<<<B');
-        
     }
 
 }
