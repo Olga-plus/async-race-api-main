@@ -133,7 +133,7 @@ export class PageGarage {
     raseAll() {
         arrsCars.then(response => response.json())
         .then(result => {
-            console.log(result[0].started());
+            console.log(result);
            
         });
        console.log( arrsCars, '<<<<<<<<<<<<<<<<<<<<<<<<<');
