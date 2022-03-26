@@ -116,23 +116,24 @@ export class PageGarage {
 export function pageGarage(){
     let garagePage = new PageGarage(callbackCar);
     const arrsCars = cars(callbackCar);
-    return arrsCars;
+
+    function callbackCar(): void {
+        switch(this.evtType){
+            case 'remove':
+                fetch(`http://localhost:3000/garage/${this.id}`, {
+                        method: 'DELETE',
+                    }).then(response => response.json())
+                    .then(result => {
+                        result;
+                        body.innerHTML = '';
+                        pageGarage();
+                    });
+                break;
+            case 'select':
+                console.log(this.id, garagePage.inputDisable, '<<<AAA');
+            break;
+        }
+    }
+
 }
 
-function callbackCar(): void {
-    switch(this.evtType){
-        case 'remove':
-            fetch(`http://localhost:3000/garage/${this.id}`, {
-                    method: 'DELETE',
-                }).then(response => response.json())
-                .then(result => {
-                    result;
-                    body.innerHTML = '';
-                    pageGarage();
-                });
-            break;
-        case 'select':
-            console.log(this, '<<<AAA');
-        break;
-    }
-}
