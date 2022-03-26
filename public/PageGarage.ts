@@ -131,7 +131,7 @@ export class PageGarage {
     }
 
     raseAll() {
-       console.groupCollapsed(carrre, '<<<<<<<<<<<<<<<<<<<<<<<<<');
+       console.log(carrre, '<<<<<<<<<<<<<<<<<<<<<<<<<');
     }
 }
 
