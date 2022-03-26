@@ -1,23 +1,8 @@
 import { node } from "webpack";
-import { Car } from "./Cars";
+import { Car, cars } from "./Cars";
 
 const body = document.querySelector('body')
-
-    function cars(callbackCar:()=> void) {
-    return fetch('http://localhost:3000/garage')
-          .then(response => response.json())
-          .then(result => {
-              result.forEach((elem: Car) => {
-                  let car = new Car(elem, callbackCar);
-                  return car;
-              });
-              console.log(result, 'function carss')
-          });
-  }
-
-  let carsss = cars;
-  console.log(carsss)
-
+let carrre = cars;
 export class PageGarage {
     btnCreate: HTMLButtonElement;
     btnUpdate: HTMLButtonElement;
@@ -35,9 +20,9 @@ export class PageGarage {
     inputDisable: boolean = true;
     id: number;
 
-    callback: object;
+    callback: () => void;
 
-    constructor(callback: object){
+    constructor(callback: () => void){
         this.createGaragePage();
         this.callback = callback
     }
@@ -95,7 +80,6 @@ export class PageGarage {
         this.btnRace = document.createElement('button');
         this.btnRace.className = "btn race-btn";
         this.btnRace.innerText = "race";
-        this.btnRace.onclick = this.raseAll.bind(this)
 
         this.btnReset = document.createElement('button');
         this.btnReset.className = "btn reset-btn";
@@ -147,14 +131,12 @@ export class PageGarage {
     }
 
     raseAll() {
-        let arrsCarscars = cars;
-        console.log(arrsCarscars)
-        
+       console.groupCollapsed(carrre, '<<<<<<<<<<<<<<<<<<<<<<<<<');
     }
 }
 
 export function pageGarage(){
-    let garagePage = new PageGarage(cars);
+    let garagePage = new PageGarage(callbackCar);
     const arrsCars = cars(callbackCar);
 
     function callbackCar(): void {
@@ -180,4 +162,5 @@ export function pageGarage(){
         }
     }
 
+    
 }
