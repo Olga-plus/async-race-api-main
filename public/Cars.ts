@@ -107,7 +107,8 @@ export class Car {
                     this.drive = false;
                     return this.drive;  
                 }
-                return this.drive = true;
+                this.timestamp = result.distance / result.velocity;
+                window.requestAnimationFrame(this.step.bind(this));
             })
         });
     }
