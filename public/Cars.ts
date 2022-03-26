@@ -100,14 +100,17 @@ export class Car {
             fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
                 method: 'PATCH',
             })
-            .then(response =>{ 
-                console.log(response.status);
+            .then((response) => {  
+                if (response.status === 200) {  
+                    console.log('Status Code: ' +  
+                    response.status);  
+                    return;  
+                }
             })
             .catch((err) => {
                 this.drive = false;
                 console.log("!!err");
             })
-            .finally()
         });
     }
 
