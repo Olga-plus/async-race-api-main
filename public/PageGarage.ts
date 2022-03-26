@@ -100,7 +100,6 @@ export function pageGarage(){
     const arrsCars = cars(callbackCar);
     return arrsCars;
 }
-const arrsCars = cars(callbackCar);
 
 function callbackCar(): void {
     switch(this.evtType){
