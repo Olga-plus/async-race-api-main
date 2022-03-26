@@ -1,5 +1,5 @@
 import { node } from "webpack";
-import { Car } from "./Cars";
+import { Car, cars } from "./Cars";
 
 const body = document.querySelector('body')
 export class PageGarage {
@@ -14,7 +14,7 @@ export class PageGarage {
     inputDisable: boolean = true;
     callback: () => void;
 
-    constructor(callback: () => void){
+    constructor(){
         this.createGaragePage();
         this.callback = this.callback
     }
@@ -95,8 +95,29 @@ export class PageGarage {
 
 }
 
-export function pageGarage(callbackGarage:()=> void){
-    let garagePage = new PageGarage(callbackGarage);
-    return garagePage;
+export function pageGarage(){
+    let garagePage = new PageGarage();
+    const arrsCars = cars(callbackCar);
+    return arrsCars;
 }
+const arrsCars = cars(callbackCar);
 
+function callbackCar(): void {
+    switch(this.evtType){
+        case 'remove':
+            fetch(`http://localhost:3000/garage/${this.id}`, {
+                    method: 'DELETE',
+                }).then(response => response.json())
+                .then(result => {
+                    result;
+                    body.innerHTML = '';
+                    pageGarage();
+                    cars(callbackCar);
+                });
+            break;
+        case 'select':
+            console.log(this.id);
+
+        break;
+    }
+}

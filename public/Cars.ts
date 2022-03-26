@@ -75,17 +75,16 @@ export class Car {
         this.btnB.onclick = this.stop.bind(this);
         this.start = null;
         this.drive = true;
-
     }
 
     remove(){
         this.evtType = 'remove';
         console.log(this.evtType)
-        this.callback();
+        this.callback( ); //-------------?
     }
     select(){
         this.evtType = 'select';
-        console.log( this.evtType)
+        console.log( this.evtType )
         this.callback();
     }
 
@@ -97,22 +96,18 @@ export class Car {
         }).then(response => response.json()) 
           .then(result => {
            this.timestamp = result.distance / result.velocity;
-           fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
-            method: 'PATCH',
-        }).then(response => {
-            if(response.status !== 200){
-            return null;
-                } else {
-                   return true;
-                }
-            }
-        )
-          .then(result => {
-            this.drive = result;
-            console.log(result, '<--+')
-        });
            window.requestAnimationFrame(this.step.bind(this));
-            console.log(result)})
+            fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
+                method: 'PATCH',
+            }).then(response => {
+                console.log(response);
+                this.drive = true
+            })
+            .catch(error => {
+                this.drive = false;
+                console.log(error);
+            });
+        })
     }
 
     stop(){
