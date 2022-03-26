@@ -101,7 +101,7 @@ export class Car {
                 method: 'PATCH',
             })
             .then((response) => {  
-                this.evtType = 'drive';
+                // this.evtType = 'drive';
                 if (response.status !== 200) {  
                     console.log('Status Code: ' +  
                     response.status); 
@@ -139,9 +139,9 @@ export class Car {
             }
             progresstime = timestamp - this.start;
             this.car.style.transform = 'translateX(' + Math.min(progresstime / 10) + 'px)';
-            console.log(this.evtType, progresstime, this.timestamp, this.drive, '33333333333')
+            // console.log(this.evtType, progresstime, this.timestamp, this.drive, '33333333333')
             if (progresstime < this.timestamp && this.drive) {
-                console.log(this.evtType, progresstime, this.drive, '111111111')
+                // console.log(this.evtType, progresstime, this.drive, '111111111')
               window.requestAnimationFrame(this.step.bind(this));
             }
         }
