@@ -130,7 +130,8 @@ export function pageGarage(){
                     });
                 break;
             case 'select':
-                console.log(this.id, garagePage.inputDisable, '<<<AAA');
+                garagePage.inputDisable = false;
+                console.log(this.id, garagePage.inputDisable, '<<<AXX');
             break;
         }
     }
