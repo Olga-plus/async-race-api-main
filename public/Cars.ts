@@ -154,7 +154,7 @@ export class Car {
 }
 
 export function cars(callbackCar:()=> void) {
-    return fetch('http://localhost:3000/garage')
+    let allCars = fetch('http://localhost:3000/garage')
           .then(response => response.json())
           .then(result => {
               result.forEach((elem: Car) => {
@@ -164,4 +164,5 @@ export function cars(callbackCar:()=> void) {
               console.log(result, 'function carss')
               return result;
           });
+          return allCars;
   }
