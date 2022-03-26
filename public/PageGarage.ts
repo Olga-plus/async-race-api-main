@@ -134,12 +134,12 @@ export function pageGarage(){
                     });
                 break;
             case 'select':
-                garagePage.inputDisable=false;
-                garagePage.inputColorUpdate.disabled = false;
-                garagePage.inputUpdate.disabled = false;
+                garagePage.inputColorUpdate.removeAttribute("disabled");
+                garagePage.inputUpdate.removeAttribute("disabled");
+                garagePage.inputUpdate.focus();
                 body.innerHTML = '';
                 pageGarage();
-                console.log(this.id, garagePage.inputDisable, garagePage.inputColorUpdate.disabled, '<<<AAA');
+                console.log(this.id, garagePage.inputDisable, garagePage.inputColorUpdate, '<<<MAA');
             break;
         }
     }
