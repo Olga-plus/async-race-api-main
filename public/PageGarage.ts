@@ -120,7 +120,7 @@ export function pageGarage(){
 }
 
 function callbackCar(): void {
-    switch(this.id){
+    switch(this.evtType){
         case 'remove':
             fetch(`http://localhost:3000/garage/${this.id}`, {
                     method: 'DELETE',
@@ -132,7 +132,7 @@ function callbackCar(): void {
                 });
             break;
         case 'select':
-            console.log(this.id, '<<<A');
+            console.log(this.evtType.id, '<<<A');
 
         break;
     }

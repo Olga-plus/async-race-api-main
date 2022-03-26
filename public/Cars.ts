@@ -80,12 +80,12 @@ export class Car {
     remove(){
         this.evtType = 'remove';
         console.log(this.evtType)
-        this.callback( ); //-------------?
+        this.callback(); //-------------?
     }
     select(){
         this.evtType = 'select';
         console.log( this.evtType )
-        this.callback( );
+        this.callback();
     }
 
     started(){
