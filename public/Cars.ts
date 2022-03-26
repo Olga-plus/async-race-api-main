@@ -101,15 +101,11 @@ export class Car {
                 method: 'PATCH',
             })
             .then((response) => {  
-                if (response.status === 200) {  
+                if (response.status !== 200) {  
                     console.log('Status Code: ' +  
-                    response.status);  
+                    response.status); 
                     return;  
                 }
-            })
-            .catch((err) => {
-                this.drive = false;
-                console.log("!!err");
             })
         });
     }
