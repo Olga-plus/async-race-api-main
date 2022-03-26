@@ -116,7 +116,7 @@ export class PageGarage {
         console.log(this.id, '<<<BA');
         fetch(`http://localhost:3000/garage/${this.id}`, {
             method: 'PUT',
-            body: JSON.stringify({ name: this.inputCreate.value, color: this.inputColorCreate.value}),
+            body: JSON.stringify({ name: this.inputUpdate.value, color: this.inputColorUpdate.value}),
             headers: {
                 'content-type': 'application/json'
             }
