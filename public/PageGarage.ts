@@ -137,9 +137,7 @@ export function pageGarage(){
                 garagePage.inputColorUpdate.removeAttribute("disabled");
                 garagePage.inputUpdate.removeAttribute("disabled");
                 garagePage.inputUpdate.focus();
-                body.innerHTML = '';
-                pageGarage();
-                console.log(this.id, garagePage.inputDisable, garagePage.inputColorUpdate, '<<<MAA');
+                console.log(this.id, garagePage.inputDisable, garagePage.inputColorUpdate, '<<<SAA');
             break;
         }
     }
