@@ -162,5 +162,6 @@ export function cars(callbackCar:()=> void) {
                   return car;
               });
               console.log(result, 'function carss')
+              return result;
           });
   }

@@ -131,7 +131,7 @@ export class PageGarage {
     }
 
     raseAll() {
-       console.log( '<<<<<<<<<<<<<<<<<<<<<<<<<');
+       console.log( arrsCars, '<<<<<<<<<<<<<<<<<<<<<<<<<');
     }
 }
 
