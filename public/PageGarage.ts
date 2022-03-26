@@ -120,15 +120,14 @@ export class PageGarage {
             headers: {
                 'content-type': 'application/json'
             }
-
-                    }).then(response => response.json())
-                    .then(result => {
-                        result;
-                        body.innerHTML = '';
-                        pageGarage();
-                    });
+        })
+        .then(response => response.json())
+        .then(result => {
+            result;
+            body.innerHTML = '';
+            pageGarage();
+        });
     }
-
 }
 
 export function pageGarage(){
@@ -154,7 +153,6 @@ export function pageGarage(){
                 garagePage.id = this.id;
                 garagePage.inputColorUpdate.setAttribute('value', this.color);
                 garagePage.inputUpdate.setAttribute('value', this.name);
-                console.log(this.id, garagePage.inputDisable, garagePage.inputColorUpdate.value, '<<<KSAA');
             break;
         }
     }
