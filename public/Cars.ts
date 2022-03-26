@@ -104,7 +104,7 @@ export class Car {
                 console.log(this.drive, '<<<');
             })
             .catch(error => {
-                this.drive = error.ok;
+                this.drive = false;
                 console.log('>>>',error.ok, this.drive);
             });
         })
