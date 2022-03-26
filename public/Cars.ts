@@ -101,13 +101,13 @@ export class Car {
                 method: 'PATCH',
             })
             .then(response =>{ 
-                response
-                this.drive = true;
+                console.log(response.status);
             })
             .catch((err) => {
                 this.drive = false;
                 console.log("!!err");
             })
+            .finally()
         });
     }
 
