@@ -133,7 +133,6 @@ function callbackCar(): void {
             break;
         case 'select':
             console.log(this.evtType.id, '<<<A');
-
         break;
     }
 }
