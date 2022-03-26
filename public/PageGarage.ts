@@ -131,7 +131,9 @@ export function pageGarage(){
                 break;
             case 'select':
                 garagePage.inputDisable = false;
-                console.log(this.id, garagePage.inputDisable, '<<<AXX');
+                body.innerHTML = '';
+                pageGarage();
+                console.log(this.id, garagePage.inputDisable, '<<<AAA');
             break;
         }
     }
