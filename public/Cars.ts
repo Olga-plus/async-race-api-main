@@ -100,12 +100,13 @@ export class Car {
             fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
                 method: 'PATCH',
             })
-            // .then(response => response)
             .catch((err) => {
                 this.drive = false;
                 console.log(err);
                 throw err;
             })
+            .then(response =>{
+                console.log(response)}
         });
     }
 
@@ -126,8 +127,9 @@ export class Car {
 
         let progresstime;
         if (this.evtType === 'stopped'){
-            this.car.style.transform = 'translateX(0px)';
-            this.start = null;
+            stop();
+            // this.car.style.transform = 'translateX(0px)';
+            // this.start = null;
         }
         if (this.evtType === 'started'){
             if (!this.start) this.start = timestamp;
