@@ -17,9 +17,9 @@ export class PageGarage {
 
     callback: () => void;
 
-    constructor(){
+    constructor(callback: () => void){
         this.createGaragePage();
-        this.callback = this.callback
+        this.callback = callback
     }
 
     createGaragePage(){
@@ -93,7 +93,6 @@ export class PageGarage {
     }
 
     create() {
-        console.log(this.inputCreate.innerText, this.inputColorCreate.innerText)
         fetch(`http://localhost:3000/garage`, {
             method: 'POST',
             body: JSON.stringify({ name: this.inputCreate.value, color: this.inputColorCreate.value}),
@@ -108,10 +107,15 @@ export class PageGarage {
         });
     }
 
+    update() {
+        this.callback();
+        console.log(this, '<<<B');
+    }
+
 }
 
 export function pageGarage(){
-    let garagePage = new PageGarage();
+    let garagePage = new PageGarage(callbackCar);
     const arrsCars = cars(callbackCar);
     return arrsCars;
 }
@@ -129,7 +133,7 @@ function callbackCar(): void {
                 });
             break;
         case 'select':
-            console.log(this.id);
+            console.log(this.id, '<<<A');
 
         break;
     }
