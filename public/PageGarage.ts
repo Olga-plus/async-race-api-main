@@ -152,8 +152,8 @@ export function pageGarage(){
                 garagePage.inputUpdate.removeAttribute("disabled");
                 garagePage.inputUpdate.focus();
                 garagePage.id = this.id;
-                garagePage.inputColorUpdate.value = this.color;
-                console.log(this.id, garagePage.inputDisable, garagePage.inputColorUpdate.value, '<<<SSSAA');
+                garagePage.inputColorUpdate.setAttribute('value', this.color);
+                console.log(this.id, garagePage.inputDisable, garagePage.inputColorUpdate.value, '<<<KSAA');
             break;
         }
     }
