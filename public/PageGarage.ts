@@ -19,9 +19,9 @@ export class PageGarage {
     inputDisable: boolean = true;
     id: number;
 
-    callback: () => void;
+    callback: object;
 
-    constructor(callback: () => void){
+    constructor(callback: object){
         this.createGaragePage();
         this.callback = callback
     }
@@ -128,10 +128,16 @@ export class PageGarage {
             pageGarage();
         });
     }
+
+    raseAll() {
+        let arrsCarscars = cars;
+        console.log(arrsCarscars)
+        
+    }
 }
 
 export function pageGarage(){
-    let garagePage = new PageGarage(callbackCar);
+    let garagePage = new PageGarage(cars);
     const arrsCars = cars(callbackCar);
 
     function callbackCar(): void {
@@ -157,5 +163,15 @@ export function pageGarage(){
         }
     }
 
+//     export function cars(callbackCar:()=> void) {
+//     return fetch('http://localhost:3000/garage')
+//           .then(response => response.json())
+//           .then(result => {
+//               result.forEach((elem: Car) => {
+//                   let car = new Car(elem, callbackCar);
+//                   return car;
+//               });
+//               console.log(result, 'function carss')
+//           });
+//   }
 }
-
