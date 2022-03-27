@@ -131,17 +131,13 @@ export class PageGarage {
     }
 
     raseAll() {
-        arrsCars.then(response => response.json())
-        .then(result => {
-            console.log(result);
-           
-        });
+        arrsCars
        console.log( arrsCars, '<<<<<<<<<<<<<<<<<<<<<<<<<');
     }
 }
 
 
-    export let garagePage = new PageGarage(callbackCar);
+    export const garagePage = new PageGarage(callbackCar);
     export const arrsCars = cars(callbackCar);
 
     function callbackCar(): void {
@@ -153,6 +149,9 @@ export class PageGarage {
                     .then(result => {
                         result;
                         body.innerHTML = '';
+                        let garagePage = new PageGarage(callbackCar);
+                        cars(callbackCar);
+
                         //---------------------------------------11111
                     });
                 break;
