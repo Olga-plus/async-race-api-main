@@ -129,11 +129,10 @@ export class PageGarage {
     }
 
     raseAll() {
-        arrsCars
-        console.log( arrsCars, '!!!<<<<<<<<');
+        let arCars = arrsCars.then(res => res[0]);
+        console.log( arCars, '!<<<<<<<<');
     }
 }
-
 
     export const garagePage = new PageGarage(callbackGarage);
     export const arrsCars = cars(callbackCar);
