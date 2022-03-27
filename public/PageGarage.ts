@@ -126,7 +126,8 @@ export class PageGarage {
         .then(result => {
             result;
             body.innerHTML = '';
-            //-----------------------------------------------------
+            new PageGarage(callbackCar);
+            cars(callbackCar)
         });
     }
 
@@ -149,7 +150,7 @@ export class PageGarage {
                     .then(result => {
                         result;
                         body.innerHTML = '';
-                        let garagePage = new PageGarage(callbackCar);
+                        new PageGarage(callbackCar);
                         cars(callbackCar);
 
                         //---------------------------------------11111
