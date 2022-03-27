@@ -156,6 +156,7 @@ export class PageGarage {
                     });
                 break;
             case 'select':
+                console.log(garagePage)
                 garagePage.inputColorUpdate.removeAttribute("disabled");
                 garagePage.inputUpdate.removeAttribute("disabled");
                 garagePage.inputUpdate.focus();
