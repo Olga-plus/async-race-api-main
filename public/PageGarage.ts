@@ -108,8 +108,7 @@ export class PageGarage {
         }).then(response => response.json())
         .then(result => {
             result;
-            body.innerHTML = '';
-            //--------------------------------------------
+            callbackGarage();
         });
     }
 
@@ -125,21 +124,25 @@ export class PageGarage {
         .then(response => response.json())
         .then(result => {
             result;
-            body.innerHTML = '';
-            new PageGarage(callbackCar);
-            cars(callbackCar)
+            callbackGarage();
         });
     }
 
     raseAll() {
         arrsCars
-       console.log( arrsCars, '<<<<<<<<<<<<<<<<<<<<<<<<<');
+        console.log( arrsCars, '!!!<<<<<<<<');
     }
 }
 
 
-    export const garagePage = new PageGarage(callbackCar);
+    export const garagePage = new PageGarage(callbackGarage);
     export const arrsCars = cars(callbackCar);
+
+    function callbackGarage() {
+        body.innerHTML = '';
+        new PageGarage(callbackCar);
+        cars(callbackCar);
+    }
 
     function callbackCar(): void {
         switch(this.evtType){
@@ -149,9 +152,10 @@ export class PageGarage {
                     }).then(response => response.json())
                     .then(result => {
                         result;
-                        body.innerHTML = '';
-                        new PageGarage(callbackCar);
-                        cars(callbackCar);
+                        callbackGarage();
+                        // body.innerHTML = '';
+                        // new PageGarage(callbackCar);
+                        // cars(callbackCar);
 
                         //---------------------------------------11111
                     });
