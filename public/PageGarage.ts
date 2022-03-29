@@ -139,7 +139,7 @@ const proba =() => {
     return garagePage;
 }
 
-console.log(proba);
+console.log(proba, 'jjjj');
 
 const arrsCars = cars(callbackCar);
 export const garagePage = new PageGarage(callbackGarage);
