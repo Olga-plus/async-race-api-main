@@ -124,7 +124,7 @@ export class PageGarage {
         .then(response => response.json())
         .then(result => {
             result;
-            callbackGarage();
+            cars(callbackCar);
         });
     }
 
