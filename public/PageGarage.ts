@@ -133,22 +133,13 @@ export class PageGarage {
         // console.log( arCars, '!<<<<<<<<');
     }
 }
-function proba (): any {
-    const garagePage = new PageGarage(callbackGarage);
-
-    return garagePage;
-}
-
-let a = proba;
-
-console.log(a, '<<>>>>');
 
 const arrsCars = cars(callbackCar);
 export const garagePage = new PageGarage(callbackGarage);
 
     function callbackGarage() {
         body.innerHTML = '';
-        new PageGarage(callbackGarage);
+        const garagePage = new PageGarage(callbackGarage);
         const arrsCars = cars(callbackCar);
     }
 
