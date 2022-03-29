@@ -2,6 +2,7 @@ import { node } from "webpack";
 import { Car } from "./Cars";
 
 const body = document.querySelector('body');
+const carsContainer = document.createElement('div');
 
 function cars(callbackCar:()=> void) {
     return fetch('http://localhost:3000/garage')
@@ -15,8 +16,8 @@ function cars(callbackCar:()=> void) {
               return result;
           });
 }
-let carContainer = cars(callbackCar);
 
+let allCars = cars(callbackCar);
 export class PageGarage {
     btnCreate: HTMLButtonElement;
     btnUpdate: HTMLButtonElement;
@@ -139,10 +140,7 @@ export class PageGarage {
         .then(response => response.json())
         .then(result => {
             result;
-            let carContainer = document.querySelectorAll('.car-container');
-            carContainer.forEach(el => {
-                el.innerHTML = '';
-            })
+
             cars(callbackCar);
         });
     }
