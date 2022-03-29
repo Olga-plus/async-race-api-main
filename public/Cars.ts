@@ -107,11 +107,9 @@ export class Car {
                     response.status); 
                     this.drive = false;
                     return this.drive;  
+                } else {
+                    // this.drive = response.status
                 }
-            })
-            .catch (err => {
-                this.drive = false;
-                return this.drive;  
             })
         });
     }
@@ -141,17 +139,14 @@ export class Car {
                 this.start = timestamp;
             }
             progresstime = timestamp - this.start;
-            let windoWidth = document.body.scrollWidth;
-            let wayCar = Math.min(progresstime / 10)
-            if (wayCar > windoWidth) {
-                this.car.style.transform = 'translateX(' + windoWidth + 'px)';
-            } else {
-                this.car.style.transform = 'translateX(' + wayCar + 'px)';
-            }
+            let windoWidth = ((document.body.scrollWidth - 20) * progresstime) / timestamp;
+            // let wayCar = Math.min(progresstime / timestamp)
+            this.car.style.transform = 'translateX(' + windoWidth + 'px)';
+         
             // console.log(this.evtType, progresstime, this.timestamp, this.drive, '222222')
             if (progresstime < this.timestamp && this.drive) {
                 // console.log(this.evtType, progresstime, this.drive, '111111111')
-              window.requestAnimationFrame(this.step.bind(this));
+            window.requestAnimationFrame(this.step.bind(this));
             }
         }
     }

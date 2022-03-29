@@ -129,8 +129,8 @@ export class PageGarage {
     }
 
     raseAll() {
-        let arCars = arrsCars.then(res => started());
-        console.log( arCars, '!<<<<<<<<');
+        // let arCars = arrsCars.then(res => started());
+        // console.log( arCars, '!<<<<<<<<');
     }
 }
 
@@ -139,8 +139,8 @@ export class PageGarage {
 
     function callbackGarage() {
         body.innerHTML = '';
-        new PageGarage(callbackCar);
-        cars(callbackCar);
+        garagePage;
+        arrsCars;
     }
 
     function callbackCar(): void {
