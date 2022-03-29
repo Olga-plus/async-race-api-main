@@ -153,7 +153,6 @@ export class PageGarage {
     }
 }
 
-const arrsCars = cars(callbackCar);
 export const garagePage = new PageGarage(callbackGarage);
 
     function callbackGarage() {
