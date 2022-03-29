@@ -129,7 +129,7 @@ export class PageGarage {
     }
 
     raseAll() {
-        let arCars = arrsCars.then(res => res[0].started());
+        let arCars = arrsCars.then(res => started());
         console.log( arCars, '!<<<<<<<<');
     }
 }
