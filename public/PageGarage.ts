@@ -159,7 +159,7 @@ export const garagePage = new PageGarage(callbackGarage);
     function callbackGarage() {
         body.innerHTML = '';
         new PageGarage(callbackGarage);
-        arrsCars = cars(callbackCar);
+        cars(callbackCar);
     }
 
     function callbackCar(): void {
