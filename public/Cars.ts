@@ -152,15 +152,15 @@ export class Car {
     }
 }
 
-export function cars(callbackCar:()=> void) {
-    return fetch('http://localhost:3000/garage')
-          .then(response => response.json())
-          .then(result => {
-              result.forEach((elem: Car) => {
-                  let car = new Car(elem, callbackCar);
-                  return car;
-              });
-              console.log(result, 'function carss')
-              return result;
-          });
-  }
+// export function cars(callbackCar:()=> void) {
+//     return fetch('http://localhost:3000/garage')
+//           .then(response => response.json())
+//           .then(result => {
+//               result.forEach((elem: Car) => {
+//                   let car = new Car(elem, callbackCar);
+//                   return car;
+//               });
+//               console.log(result, 'function carss')
+//               return result;
+//           });
+//   }

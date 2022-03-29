@@ -1,7 +1,22 @@
 import { node } from "webpack";
-import { Car, cars } from "./Cars";
+import { Car } from "./Cars";
 
-const body = document.querySelector('body')
+const body = document.querySelector('body');
+
+function cars(callbackCar:()=> void) {
+    return fetch('http://localhost:3000/garage')
+          .then(response => response.json())
+          .then(result => {
+              result.forEach((elem: Car) => {
+                  let car = new Car(elem, callbackCar);
+                  return car;
+              });
+              console.log(result, 'function carss')
+              return result;
+          });
+}
+let carContainer = cars(callbackCar);
+
 export class PageGarage {
     btnCreate: HTMLButtonElement;
     btnUpdate: HTMLButtonElement;
@@ -124,6 +139,10 @@ export class PageGarage {
         .then(response => response.json())
         .then(result => {
             result;
+            let carContainer = document.querySelectorAll('.callbackCar');
+            carContainer.forEach(el => {
+                el.innerHTML = '';
+            })
             cars(callbackCar);
         });
     }
@@ -139,8 +158,8 @@ export const garagePage = new PageGarage(callbackGarage);
 
     function callbackGarage() {
         body.innerHTML = '';
-        const garagePage = new PageGarage(callbackGarage);
-        const arrsCars = cars(callbackCar);
+        new PageGarage(callbackGarage);
+        arrsCars = cars(callbackCar);
     }
 
     function callbackCar(): void {
@@ -152,11 +171,6 @@ export const garagePage = new PageGarage(callbackGarage);
                     .then(result => {
                         result;
                         callbackGarage();
-                        // body.innerHTML = '';
-                        // new PageGarage(callbackCar);
-                        // cars(callbackCar);
-
-                        //---------------------------------------11111
                     });
                 break;
             case 'select':
@@ -171,4 +185,8 @@ export const garagePage = new PageGarage(callbackGarage);
         }
     }
 
+
+function el(el: any) {
+    throw new Error("Function not implemented.");
+}
 
