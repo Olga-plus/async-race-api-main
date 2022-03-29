@@ -109,6 +109,10 @@ export class Car {
                     return this.drive;  
                 }
             })
+            .catch (err => {
+                this.drive = false;
+                return this.drive;  
+            })
         });
     }
 
