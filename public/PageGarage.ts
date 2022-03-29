@@ -134,13 +134,13 @@ export class PageGarage {
     }
 }
 
-    export const garagePage = new PageGarage(callbackGarage);
-    export const arrsCars = cars(callbackCar);
+    const arrsCars = cars(callbackCar);
+   export const garagePage = new PageGarage(callbackGarage);
 
     function callbackGarage() {
         body.innerHTML = '';
-        garagePage;
-        arrsCars;
+        garagePage
+        const arrsCars = cars(callbackCar);
     }
 
     function callbackCar(): void {
