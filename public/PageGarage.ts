@@ -139,7 +139,7 @@ export class PageGarage {
         .then(response => response.json())
         .then(result => {
             result;
-            let carContainer = document.querySelectorAll('.callbackCar');
+            let carContainer = document.querySelectorAll('.car-container');
             carContainer.forEach(el => {
                 el.innerHTML = '';
             })
