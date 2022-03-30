@@ -188,10 +188,10 @@ export const garagePage = new PageGarage(callbackGarage);
 
 let allCars = cars(callbackCar);
 console.log(allCars
-// .then(result => {
-//     result.forEach((elem: any) => {
-//         console.log(elem, '<<!!!<');
-//         // carsContainer.appendChild(elem.carContainer);
-//     })
+.then(result => {
+    // result.map((elem: any) => {
+        console.log(result, '<<!!!<');
+        // carsContainer.appendChild(elem.carContainer);
+    })
 // })
 );
