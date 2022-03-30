@@ -191,7 +191,7 @@ export const garagePage = new PageGarage(callbackGarage);
     }
 
 
-// let allCars = cars(callbackCar);
+let allCars = cars(callbackCar);
 // console.log(allCars
 // .then(result => {
 //     // result.map((elem: any) => {
