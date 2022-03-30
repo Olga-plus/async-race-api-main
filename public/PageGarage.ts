@@ -12,8 +12,8 @@ function cars(callbackCar:()=> void) {
                   let car = new Car(elem, callbackCar);
                   return car;
               });
-                // result.forEach((item: any) => carsContainer.appendChild(item));
-              console.log(result, 'function <carss')
+                result.forEach((item: any) => carsContainer.appendChild(item.carContainer));
+              console.log(result, 'function <carsAAs')
               return result;
           });
 }
@@ -186,11 +186,11 @@ export const garagePage = new PageGarage(callbackGarage);
     }
 
 
-    let allCars = cars(callbackCar);
-console.log(allCars
-.then(result => {
-    result.forEach((elem: any) => {
-        console.log(elem.carContainer);
-        carsContainer.appendChild(elem.carContainer);
-    })
-}));
+let allCars = cars(callbackCar);
+// console.log(allCars
+// .then(result => {
+//     result.forEach((elem: any) => {
+//         console.log(elem.carContainer, '<<<');
+//         carsContainer.appendChild(elem.carContainer);
+//     })
+// }));
