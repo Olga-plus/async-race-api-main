@@ -191,6 +191,6 @@ console.log(allCars
 .then(result => {
     result.forEach((elem: any) => {
         console.log(elem);
-        // result.forEach((item: any) => carsContainer.appendChild(item));
+        carsContainer.appendChild(elem);
     })
 }));
