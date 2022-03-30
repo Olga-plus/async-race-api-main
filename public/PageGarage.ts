@@ -147,13 +147,6 @@ export class PageGarage {
         .then(result => {
             result;
             callbackGarage();
-            garagePage.inputColorUpdate.setAttribute("disabled", 'true');
-            garagePage.inputUpdate.setAttribute("disabled", 'true');
-            garagePage.inputUpdate.focus();
-            garagePage.inputColorUpdate.setAttribute('value', '');
-            garagePage.inputUpdate.setAttribute('value', '');
-            garagePage.id = null;
-            
         });
     }
 
@@ -196,12 +189,12 @@ export const garagePage = new PageGarage(callbackGarage);
     }
 
 
-let allCars = cars(callbackCar);
-console.log(allCars
-.then(result => {
-    // result.map((elem: any) => {
-        console.log(result, '<<!!<');
-        // carsContainer.appendChild(elem.carContainer);
-    })
-// })
-);
+// let allCars = cars(callbackCar);
+// console.log(allCars
+// .then(result => {
+//     // result.map((elem: any) => {
+//         console.log(result, '<<!!<');
+//         // carsContainer.appendChild(elem.carContainer);
+//     })
+// // })
+// );
