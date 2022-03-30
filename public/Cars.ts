@@ -138,8 +138,9 @@ export class Car {
                 this.start = timestamp;
             }
             progresstime = this.timestamp - this.start;
-            console.log ( progresstime )
+            console.log ( progresstime , 'prog')
             // let windoWidth = ((document.body.scrollWidth) * progresstime) / timestamp;
+            
             let windoWidth =  ((document.body.scrollWidth - this.car.getBoundingClientRect().width) * progresstime) /this.timestamp;
             // let wayCar = Math.min(progresstime / timestamp)
             this.car.style.transform = 'translateX(' + windoWidth + 'px)';
