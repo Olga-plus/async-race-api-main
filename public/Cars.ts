@@ -13,6 +13,7 @@ export class Car {
     drive:boolean;
     timestamp: number;
     start: number;
+    carContainer: HTMLDivElement
 
     constructor({ name, color, id }: { name: string; color: string; id: number; }, callback: () => void){
         this.name = name;
@@ -27,13 +28,13 @@ export class Car {
     }
 
     renderCar() {
-        const carContainer = document.createElement('div');
-        carContainer.className = 'car-container';
-        body.appendChild(carContainer);
+        this.carContainer = document.createElement('div');
+        this.carContainer.className = 'car-container';
+        body.appendChild(this.carContainer);
 
         const wrapperBtn = document.createElement('div');
         wrapperBtn.className = 'wrapper';
-        carContainer.appendChild(wrapperBtn);
+        this.carContainer.appendChild(wrapperBtn);
 
         this.selectButton = document.createElement('button');
         this.selectButton.className = 'select-btn';
@@ -51,7 +52,7 @@ export class Car {
 
         const wrapperCar = document.createElement('div');
         wrapperCar.className = 'wrapper';
-        carContainer.appendChild(wrapperCar);
+        this.carContainer.appendChild(wrapperCar);
 
         this.btnA = document.createElement('button');
         this.btnA.className = 'btn-a';

@@ -190,7 +190,7 @@ export const garagePage = new PageGarage(callbackGarage);
 console.log(allCars
 .then(result => {
     result.forEach((elem: any) => {
-        console.log(elem);
-        carsContainer.appendChild(elem);
+        console.log(elem.carContainer);
+        carsContainer.appendChild(elem.carContainer);
     })
 }));
