@@ -13,8 +13,8 @@ function cars(callbackCar:()=> void) {
                   return car;
               });
             //     // result.forEach((item: any) => carsContainer.appendChild(item.carContainer));
-            //   console.log( 'function <sddAs')
-            //   return result;
+              console.log( result, 'function <sddAs')
+              return result;
           });
 }
 
