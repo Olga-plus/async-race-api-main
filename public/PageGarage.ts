@@ -147,7 +147,13 @@ export class PageGarage {
         .then(result => {
             result;
             callbackGarage();
-            garagePage ;
+            garagePage.inputColorUpdate.setAttribute("disabled", 'true');
+            garagePage.inputUpdate.setAttribute("disabled", 'true');
+            garagePage.inputUpdate.focus();
+            garagePage.inputColorUpdate.setAttribute('value', '');
+            garagePage.inputUpdate.setAttribute('value', '');
+            garagePage.id = null;
+            
         });
     }
 
@@ -156,9 +162,7 @@ export class PageGarage {
         // console.log( arCars, '!<<<<<<<<');
     }
 }
-function newGarage () {
-    const garagePage = new PageGarage(callbackGarage);
-}
+
 export const garagePage = new PageGarage(callbackGarage);
 
     function callbackGarage() {
@@ -184,9 +188,9 @@ export const garagePage = new PageGarage(callbackGarage);
                 garagePage.inputColorUpdate.removeAttribute("disabled");
                 garagePage.inputUpdate.removeAttribute("disabled");
                 garagePage.inputUpdate.focus();
-                garagePage.id = this.id;
                 garagePage.inputColorUpdate.setAttribute('value', this.color);
                 garagePage.inputUpdate.setAttribute('value', this.name);
+                garagePage.id = this.id;
             break;
         }
     }
