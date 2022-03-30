@@ -187,7 +187,7 @@ export const garagePage = new PageGarage(callbackGarage);
 
 
     let allCars = cars(callbackCar);
-console.log(allCars.then(response => response.json())
+console.log(allCars
 .then(result => {
     result.forEach((elem: any) => {
         console.log(elem);
