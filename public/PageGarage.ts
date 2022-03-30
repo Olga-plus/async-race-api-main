@@ -187,9 +187,9 @@ export const garagePage = new PageGarage(callbackGarage);
                 console.log(garagePage)
                 garagePage.inputColorUpdate.removeAttribute("disabled");
                 garagePage.inputUpdate.removeAttribute("disabled");
-                garagePage.inputUpdate.focus();
                 garagePage.inputColorUpdate.setAttribute('value', this.color);
                 garagePage.inputUpdate.setAttribute('value', this.name);
+                garagePage.inputUpdate.focus();
                 garagePage.id = this.id;
             break;
         }
@@ -200,7 +200,7 @@ let allCars = cars(callbackCar);
 console.log(allCars
 .then(result => {
     // result.map((elem: any) => {
-        console.log(result, '<<!!!<');
+        console.log(result, '<<!!<');
         // carsContainer.appendChild(elem.carContainer);
     })
 // })
