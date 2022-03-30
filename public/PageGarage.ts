@@ -19,7 +19,7 @@ function cars(callbackCar:()=> void){
                   let car = new Car(elem, callbackCar);
                   return car;
               });
-                // result.forEach((item: any) => carsContainer.appendChild(item.carContainer));
+                // result.forEach((item) => carsContainer.appendChild(item));
               console.log( result, 'function <sddAs')
               return result;
           });
@@ -163,10 +163,6 @@ export class PageGarage {
 export const garagePage = new PageGarage(callbackGarage);
 
     function callbackGarage() {
-        // body.innerHTML = '';
-        let blockCar = document.querySelectorAll('.car-container');
-        blockCar.forEach(item => item.remove())
-        cars(callbackCar);
     }
 
     function callbackCar(): void {
