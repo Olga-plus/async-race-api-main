@@ -10,7 +10,6 @@ function cars(callbackCar:()=> void) {
           .then(result => {
               result.forEach((elem: Car) => {
                   let car = new Car(elem, callbackCar);
-                  console.log(carsContainer, elem.car, '<<>>carss')
                   return car;
               });
                 // result.forEach((item: any) => carsContainer.appendChild(item));
@@ -20,6 +19,12 @@ function cars(callbackCar:()=> void) {
 }
 
 let allCars = cars(callbackCar);
+console.log(allCars.then(response => response.json())
+.then(result => {
+    result.forEach((elem: any) => {
+        console.log(elem);
+        result.forEach((item: any) => carsContainer.appendChild(item));
+    }), 'function grss')
 
 export class PageGarage {
     btnCreate: HTMLButtonElement;
