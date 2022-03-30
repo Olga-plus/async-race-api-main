@@ -97,7 +97,7 @@ export class Car {
         }).then(response => response.json()) 
           .then(result => {
            this.timestamp = result.distance / result.velocity;
-           console.log(this.timestamp, '<<', result.distance, '<<', result.velocity , '<<<')
+           console.log(this.timestamp, '<<', result.distance, '<<', result.velocity , '<<<', document.body.scrollWidth, '<<', this.carContainer.getBoundingClientRect())
            window.requestAnimationFrame(this.step.bind(this));
             fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
                 method: 'PATCH',
@@ -139,7 +139,7 @@ export class Car {
             }
             progresstime = this.timestamp - this.start;
             // let windoWidth = ((document.body.scrollWidth) * progresstime) / timestamp;
-            let windoWidth =  progresstime /this.timestamp;
+            let windoWidth =  (document.body.scrollWidth + progresstime) /this.timestamp;
             // let wayCar = Math.min(progresstime / timestamp)
             this.car.style.transform = 'translateX(' + windoWidth + 'px)';
          
