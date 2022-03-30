@@ -18,8 +18,6 @@ function cars(callbackCar:()=> void) {
           });
 }
 
-
-
 export class PageGarage {
     btnCreate: HTMLButtonElement;
     btnUpdate: HTMLButtonElement;
