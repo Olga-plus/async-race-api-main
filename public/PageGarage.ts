@@ -190,7 +190,7 @@ let allCars = cars(callbackCar);
 console.log(allCars
 .then(result => {
     result.forEach((elem: any) => {
-        console.log(elem.carContainer, '<<!!!<');
+        console.log(elem, '<<!!!<');
         // carsContainer.appendChild(elem.carContainer);
     })
 }));
