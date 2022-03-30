@@ -12,8 +12,8 @@ function cars(callbackCar:()=> void) {
                   let car = new Car(elem, callbackCar);
                   return car;
               });
-                result.forEach((item: any) => carsContainer.appendChild(item.carContainer));
-              console.log(result, 'function <carsAAs')
+                // result.forEach((item: any) => carsContainer.appendChild(item.carContainer));
+              console.log(result.carContainer, 'function <carsAAs')
               return result;
           });
 }
