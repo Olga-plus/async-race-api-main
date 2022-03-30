@@ -102,15 +102,12 @@ export class Car {
                 method: 'PATCH',
             })
             .then((response) => {  
-                // this.evtType = 'drive';
                 if (response.status !== 200) {  
                     console.log('Status Code: ' +  
                     response.status); 
                     this.drive = false;
                     return this.drive;  
-                } else {
-                    // this.drive = response.status
-                }
+                } 
             })
         });
     }
@@ -140,7 +137,7 @@ export class Car {
                 this.start = timestamp;
             }
             progresstime = timestamp - this.start;
-            let windoWidth = ((document.body.scrollWidth - 20) * progresstime) / timestamp;
+            let windoWidth = ((document.body.scrollWidth) * progresstime) / timestamp;
             // let wayCar = Math.min(progresstime / timestamp)
             this.car.style.transform = 'translateX(' + windoWidth + 'px)';
          
