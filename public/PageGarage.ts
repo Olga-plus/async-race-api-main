@@ -160,7 +160,7 @@ export class PageGarage {
 export const garagePage = new PageGarage(callbackGarage);
 
     function callbackGarage() {
-        body.innerHTML = '';
+        // body.innerHTML = '';
         let blockCar = document.querySelectorAll('.car-container');
         blockCar.forEach(item => item.remove())
         cars(callbackCar);
