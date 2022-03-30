@@ -130,7 +130,9 @@ export class PageGarage {
         }).then(response => response.json())
         .then(result => {
             result;
-            callbackGarage();
+            body.innerHTML = '';
+            this.createGaragePage();
+            cars(callbackCar);
         });
     }
 
@@ -146,9 +148,9 @@ export class PageGarage {
         .then(response => response.json())
         .then(result => {
             result;
+            body.innerHTML = '';
             this.createGaragePage();
             cars(callbackCar);
-            // callbackGarage();
         });
     }
 
