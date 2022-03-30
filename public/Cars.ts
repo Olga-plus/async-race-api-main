@@ -97,6 +97,7 @@ export class Car {
         }).then(response => response.json()) 
           .then(result => {
            this.timestamp = result.distance / result.velocity;
+           console.log(this.timestamp, result.distance, result.velocity , '<<<')
            window.requestAnimationFrame(this.step.bind(this));
             fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
                 method: 'PATCH',
