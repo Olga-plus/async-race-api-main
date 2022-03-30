@@ -147,6 +147,7 @@ export class PageGarage {
         .then(result => {
             result;
             callbackGarage();
+            garagePage ;
         });
     }
 
@@ -155,7 +156,9 @@ export class PageGarage {
         // console.log( arCars, '!<<<<<<<<');
     }
 }
-
+function newGarage () {
+    const garagePage = new PageGarage(callbackGarage);
+}
 export const garagePage = new PageGarage(callbackGarage);
 
     function callbackGarage() {
