@@ -10,9 +10,10 @@ function cars(callbackCar:()=> void) {
           .then(result => {
               result.forEach((elem: Car) => {
                   let car = new Car(elem, callbackCar);
+                  console.log(car, elem, '<<>>carss')
                   return car;
               });
-                result.forEach((item: any) => carsContainer.appendChild(item));
+                // result.forEach((item: any) => carsContainer.appendChild(item));
               console.log(result, 'function <carss')
               return result;
           });
