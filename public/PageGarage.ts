@@ -12,8 +12,8 @@ function cars(callbackCar:()=> void) {
                   let car = new Car(elem, callbackCar);
                   return car;
               });
-              console.log(result, 'function carss')
-            //   result.forEach((item: any) => carsContainer.appendChild(item.carContainer));
+                result.forEach((item: any) => carsContainer.appendChild(item.carContainer));
+              console.log(result, 'function <<carss')
               return result;
           });
 }
@@ -184,9 +184,3 @@ export const garagePage = new PageGarage(callbackGarage);
             break;
         }
     }
-
-
-function el(el: any) {
-    throw new Error("Function not implemented.");
-}
-
