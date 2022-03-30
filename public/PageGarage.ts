@@ -18,13 +18,7 @@ function cars(callbackCar:()=> void) {
           });
 }
 
-let allCars = cars(callbackCar);
-console.log(allCars.then(response => response.json())
-.then(result => {
-    result.forEach((elem: any) => {
-        console.log(elem);
-        result.forEach((item: any) => carsContainer.appendChild(item));
-    }), 'function grss')
+
 
 export class PageGarage {
     btnCreate: HTMLButtonElement;
@@ -190,3 +184,13 @@ export const garagePage = new PageGarage(callbackGarage);
             break;
         }
     }
+
+
+    let allCars = cars(callbackCar);
+console.log(allCars.then(response => response.json())
+.then(result => {
+    result.forEach((elem: any) => {
+        console.log(elem);
+        result.forEach((item: any) => carsContainer.appendChild(item));
+    })
+}));
