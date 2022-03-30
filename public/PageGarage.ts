@@ -13,7 +13,7 @@ function cars(callbackCar:()=> void) {
                   return car;
               });
                 // result.forEach((item: any) => carsContainer.appendChild(item.carContainer));
-              console.log(result[0].carContainer, 'function <carsddAs')
+              console.log( 'function <sddAs')
               return result;
           });
 }
@@ -187,10 +187,10 @@ export const garagePage = new PageGarage(callbackGarage);
 
 
 let allCars = cars(callbackCar);
-// console.log(allCars
-// .then(result => {
-//     result.forEach((elem: any) => {
-//         console.log(elem.carContainer, '<<<');
-//         carsContainer.appendChild(elem.carContainer);
-//     })
-// }));
+console.log(allCars
+.then(result => {
+    result.forEach((elem: any) => {
+        console.log(elem.carContainer, '<<!!!<');
+        // carsContainer.appendChild(elem.carContainer);
+    })
+}));
