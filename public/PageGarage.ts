@@ -4,18 +4,27 @@ import { Car } from "./Cars";
 const body = document.querySelector('body');
 const carsContainer = document.createElement('div');
 
-function cars(callbackCar:()=> void) {
+// export function cardXs(): Card[]{
+//     return data.map(function (item) {
+//         const cardX = new Card(item);
+//             return cardX;
+//         });
+// } 
+
+function cars(callbackCar:()=> void){
     return fetch('http://localhost:3000/garage')
-          .then(response => response.json())
-          .then(result => {
-              result.forEach((elem: Car) => {
-                  let car = new Car(elem, callbackCar);
-                  return car;
-              });
-            //     // result.forEach((item: any) => carsContainer.appendChild(item.carContainer));
-              console.log( result, 'function <sddAs')
-              return result;
-          });
+          .then(response => {
+            console.log(response.json());
+            })
+        //   .then(result => {
+        //       result.forEach((elem: Car) => {
+        //           let car = new Car(elem, callbackCar);
+        //           return car;
+        //       });
+        //     //     // result.forEach((item: any) => carsContainer.appendChild(item.carContainer));
+        //       console.log( result, 'function <sddAs')
+        //       return result;
+        //   });
 }
 
 export class PageGarage {
