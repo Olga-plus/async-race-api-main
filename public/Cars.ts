@@ -127,7 +127,7 @@ export class Car {
     }
 
     step(timestamp: number) {
-
+        let progresstime;
         
         if (this.evtType === 'stopped'){
             this.car.style.transform = 'translateX(0px)';
@@ -137,7 +137,7 @@ export class Car {
             if (!this.start) {
                 this.start = timestamp;
             }
-            let progresstime = timestamp - this.start;
+            progresstime = this.timestamp - this.start;
             console.log ( progresstime , 'prog', this.timestamp, timestamp, this.start)
             // let windoWidth = ((document.body.scrollWidth) * progresstime) / timestamp;
             // (document.body.scrollWidth - this.car.getBoundingClientRect().width)
