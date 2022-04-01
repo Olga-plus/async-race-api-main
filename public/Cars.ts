@@ -138,12 +138,10 @@ export class Car {
         if (this.evtType === 'started'){
             if (!this.start) {
                 this.start = timestamp;
-                console.log ( this.start, '<<<this.start', timestamp, '<<<timestamp' )
             }
             progresstime = timestamp - this.start;
             let windoWidth = ((document.body.scrollWidth - this.lengthCar -50) * progresstime) / this.timestamp;
             this.car.style.transform = 'translateX(' + windoWidth + 'px)';
-            console.log ( windoWidth, ' <!!!windoWidth' );
             if (progresstime < this.timestamp && this.drive) {
             window.requestAnimationFrame(this.step.bind(this));
             }
