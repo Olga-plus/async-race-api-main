@@ -14,6 +14,7 @@ export class Car {
     timestamp: number;
     start: number;
     carContainer: HTMLDivElement
+    lengthCar: number;
 
     constructor({ name, color, id }: { name: string; color: string; id: number; }, callback: () => void){
         this.name = name;
@@ -97,6 +98,7 @@ export class Car {
         }).then(response => response.json()) 
           .then(result => {
            this.timestamp = result.distance / result.velocity;
+           this.lengthCar = this.car.getBoundingClientRect().right;
            console.log(this.timestamp, '<<this.timestamp', document.body.scrollWidth, '<<scrollWidth', this.car.getBoundingClientRect().width)
            window.requestAnimationFrame(this.step.bind(this));
             fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
@@ -142,10 +144,10 @@ export class Car {
 
             // let windoWidth = ((document.body.scrollWidth) * progresstime) / timestamp;
             // (document.body.scrollWidth - this.car.getBoundingClientRect().width)
-            let windoWidth = ((document.body.scrollWidth - this.car.getBoundingClientRect().width) * progresstime) / this.timestamp; //--&
+            let windoWidth = ((document.body.scrollWidth - this.lengthCar) * progresstime) / this.timestamp; //--&
             // let wayCar = (progresstime / timestamp)  (document.body.scrollWidth - this.car.getBoundingClientRect().width) * 
             this.car.style.transform = 'translateX(' + windoWidth + 'px)';
-            console.log ( windoWidth, ' <windoWidth' );
+            console.log ( windoWidth, ' <!!!windoWidth' );
             if (progresstime < this.timestamp && this.drive) {
                 console.log (progresstime < this.timestamp && this.drive, 'iif' );
             window.requestAnimationFrame(this.step.bind(this));
