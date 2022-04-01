@@ -24,6 +24,8 @@ function cars(callbackCar:()=> void){
               return result;
           });
 }
+
+let allCars = cars(callbackCar);
 export class PageGarage {
     btnCreate: HTMLButtonElement;
     btnUpdate: HTMLButtonElement;
@@ -155,8 +157,9 @@ export class PageGarage {
     }
 
     raseAll() {
+
         // let arCars = arrsCars.then(res => started());
-        // console.log( arCars, '!<<<<<<<<');
+        console.log( allCars, '!<<<<<<<<');
     }
 }
 
@@ -187,9 +190,6 @@ export const garagePage = new PageGarage(callbackGarage);
             break;
         }
     }
-
-
-let allCars = cars(callbackCar);
 // console.log(allCars
 // .then(result => {
 //     // result.map((elem: any) => {
