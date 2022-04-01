@@ -97,7 +97,7 @@ export class Car {
         }).then(response => response.json()) 
           .then(result => {
            this.timestamp = result.distance / result.velocity;
-           console.log(this.timestamp, '<<', result.distance, '<<', result.velocity , '<<<', document.body.scrollWidth, '<<', this.car.getBoundingClientRect().width)
+           console.log(this.timestamp, '<<this.timestamp', document.body.scrollWidth, '<<scrollWidth', this.car.getBoundingClientRect().width)
            window.requestAnimationFrame(this.step.bind(this));
             fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
                 method: 'PATCH',
@@ -136,17 +136,19 @@ export class Car {
         if (this.evtType === 'started'){
             if (!this.start) {
                 this.start = timestamp;
-                console.log ( this.start, '<<<this.start' )
+                console.log ( this.start, '<<<this.start', timestamp, '<<<timestamp' )
             }
             progresstime = this.timestamp - this.start;
-            console.log ( progresstime , 'AV!prog', this.timestamp, '<this.timestamp', timestamp, '< timestamp', this.start)
+            console.log ( progresstime , 'AV!prog', this.timestamp, '<this.timestamp')
+            console.log ( timestamp, '< timestamp', this.start, '< this.start')
             // let windoWidth = ((document.body.scrollWidth) * progresstime) / timestamp;
             // (document.body.scrollWidth - this.car.getBoundingClientRect().width)
             let windoWidth =  (progresstime) / timestamp; //--&
             // let wayCar = Math.min(progresstime / timestamp)  (document.body.scrollWidth - this.car.getBoundingClientRect().width) * 
             this.car.style.transform = 'translateX(' + windoWidth + 'px)';
-            console.log ( windoWidth, ' windoWidth' );
+            console.log ( windoWidth, ' <windoWidth' );
             if (progresstime < this.timestamp && this.drive) {
+                console.log (progresstime < this.timestamp && this.drive, ' if' );
             window.requestAnimationFrame(this.step.bind(this));
             }
         }
