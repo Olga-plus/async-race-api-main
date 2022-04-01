@@ -135,7 +135,7 @@ export class Car {
         }
         if (this.evtType === 'started'){
             if (!this.start) {
-                this.start = timestamp;
+                this.start = this.timestamp;
                 console.log ( this.start, '<<<this.start' )
             }
             progresstime = timestamp - this.start;
