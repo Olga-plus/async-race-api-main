@@ -135,17 +135,17 @@ export class Car {
         }
         if (this.evtType === 'started'){
             if (!this.start) {
-                this.start = timestamp;
+                this.start = this.timestamp;
                 console.log ( this.start, '<<<this.start' )
             }
             progresstime = this.timestamp - this.start;
             console.log ( progresstime , 'prog', this.timestamp, timestamp, this.start)
             // let windoWidth = ((document.body.scrollWidth) * progresstime) / timestamp;
             // (document.body.scrollWidth - this.car.getBoundingClientRect().width)
-            let windoWidth =  ((document.body.scrollWidth) * progresstime) / timestamp;
+            let windoWidth =  ((document.body.scrollWidth) * progresstime) / this.timestamp; //--&
             // let wayCar = Math.min(progresstime / timestamp)
             this.car.style.transform = 'translateX(' + windoWidth + 'px)';
-            console.log ( windoWidth, '<<<' );
+            console.log ( windoWidth, ' windoWidth' );
             if (progresstime < this.timestamp && this.drive) {
             window.requestAnimationFrame(this.step.bind(this));
             }
