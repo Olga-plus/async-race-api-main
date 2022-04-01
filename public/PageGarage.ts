@@ -160,13 +160,17 @@ export class PageGarage {
         // let arCars = arrsCars.then(res => started());
         // console.log( allCars, '!!!<<<<<<<');
         allCars.then(values => {
-            let arr:string[] = [];
-            arr.length = values.length;
+            // let arr:string[] = [];
+            // arr.length = 
+            let arr;
             // console.log(values = `http://localhost:3000/engine?id=${values.id}&status=started`);
-            arr.map((elem, i) => {`http://localhost:3000/engine?id=${values[i].id}&status=started`});
-            console.log(arr, 'nnn');
+            for (let i = 0; i < values.length; i++) {
+                arr = new Array(values[i].id)
+            }
+            // arr.map((elem, i) => {`http://localhost:3000/engine?id=${values[i].id}&status=started`});
+            console.log(arr, 'nNn');
             Promise.all(values).then(values => {
-                console.log(values, '!<<');
+                console.log(values, '<<');
               });
           });
 
