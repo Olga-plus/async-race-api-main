@@ -167,7 +167,10 @@ export class PageGarage {
             
             console.log(arr, 'NNn');
             Promise.all(arr).then(values => {
-                console.log(values, '<!<');
+                values.map(elem => {
+                    fetch(elem).then(response => response.json());
+                })
+                console.log(values, '>!<');
               });
           });
 
