@@ -135,11 +135,11 @@ export class Car {
         }
         if (this.evtType === 'started'){
             if (!this.start) {
-                this.start = this.timestamp;
+                this.start = timestamp;
                 console.log ( this.start, '<<<this.start' )
             }
-            progresstime = timestamp - this.start;
-            console.log ( progresstime , '!prog', this.timestamp, '<this.timestamp', timestamp, '< timestamp', this.start)
+            progresstime = this.timestamp - this.start;
+            console.log ( progresstime , 'AAd!prog', this.timestamp, '<this.timestamp', timestamp, '< timestamp', this.start)
             // let windoWidth = ((document.body.scrollWidth) * progresstime) / timestamp;
             // (document.body.scrollWidth - this.car.getBoundingClientRect().width)
             let windoWidth =  ((document.body.scrollWidth - this.car.getBoundingClientRect().width) * progresstime) / this.timestamp; //--&
