@@ -145,8 +145,8 @@ export class Car {
             let windoWidth = ((document.body.scrollWidth - this.car.getBoundingClientRect().width) * progresstime) / this.timestamp; //--&
             // let wayCar = (progresstime / timestamp)  (document.body.scrollWidth - this.car.getBoundingClientRect().width) * 
             this.car.style.transform = 'translateX(' + windoWidth + 'px)';
-            console.log ( windoWidth, ' <!!!windoWidth' );
-            if (progresstime < timestamp && this.drive) {
+            console.log ( windoWidth, ' <windoWidth' );
+            if (progresstime < this.timestamp && this.drive) {
                 console.log (progresstime < timestamp && this.drive, ' if' );
             window.requestAnimationFrame(this.step.bind(this));
             }
