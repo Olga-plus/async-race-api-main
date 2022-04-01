@@ -158,12 +158,12 @@ export class PageGarage {
 
     raseAll() {
         // let arCars = arrsCars.then(res => started());
-        console.log( allCars, '!!!<<<<<<<');
+        // console.log( allCars, '!!!<<<<<<<');
         allCars.then(values => {
             console.log(values);
-            Promise.all(values).then(values => {
-                console.log(values, '<<');
-              });
+            // Promise.all(values).then(values => {
+            //     console.log(values, '<<');
+            //   });
           });
 
 

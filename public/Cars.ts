@@ -105,6 +105,7 @@ export class Car {
                 method: 'PATCH',
             })
             .then((response) => {  
+                console.log('<<!!', response)
                 if (response.status !== 200) {  
                     console.log('Status Code: ' +  
                     response.status); 
