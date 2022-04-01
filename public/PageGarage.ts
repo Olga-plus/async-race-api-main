@@ -163,10 +163,10 @@ export class PageGarage {
             let arr:string[] = [];
             arr.length = values.length;
             // console.log(values = `http://localhost:3000/engine?id=${values.id}&status=started`);
-            arr.map((elem, i) => {elem = (`http://localhost:3000/engine?id=${values[i].id}&status=started`)});
+            arr.map((elem, i) => {`http://localhost:3000/engine?id=${values[i].id}&status=started`});
             console.log(arr, 'nnn');
             Promise.all(values).then(values => {
-                console.log(values, '<<');
+                console.log(values, '!<<');
               });
           });
 
