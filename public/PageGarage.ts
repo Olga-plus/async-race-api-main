@@ -166,11 +166,11 @@ export class PageGarage {
             }
             
             console.log(arr, 'NNn');
-            Promise.all(arr).then(values => {
+            let arrPromise = Promise.all(arr).then(values => {
                 values.map(elem => {
                     fetch(elem).then(response => response.json());
                 })
-                console.log(values, '>!<');
+                console.log(values, arrPromise, '>!<');
               });
           });
 
