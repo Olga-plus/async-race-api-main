@@ -138,9 +138,8 @@ export class Car {
                 this.start = timestamp;
                 console.log ( this.start, '<<<this.start', timestamp, '<<<timestamp' )
             }
-            progresstime = this.timestamp - this.start;
-            console.log ( progresstime , '!!!prog', this.timestamp, '<this.timestamp')
-            console.log ( timestamp, '< timestamp', this.start, '< this.start')
+            progresstime = timestamp - this.start;
+
             // let windoWidth = ((document.body.scrollWidth) * progresstime) / timestamp;
             // (document.body.scrollWidth - this.car.getBoundingClientRect().width)
             let windoWidth =  ((document.body.scrollWidth - this.car.getBoundingClientRect().width) * progresstime) / timestamp; //--&
@@ -148,7 +147,7 @@ export class Car {
             this.car.style.transform = 'translateX(' + windoWidth + 'px)';
             console.log ( windoWidth, ' <windoWidth' );
             if (progresstime < this.timestamp && this.drive) {
-                console.log (progresstime < this.timestamp && this.drive, ' if' );
+                console.log (progresstime < timestamp && this.drive, ' if' );
             window.requestAnimationFrame(this.step.bind(this));
             }
         }
