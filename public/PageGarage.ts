@@ -161,9 +161,9 @@ export class PageGarage {
         // console.log( allCars, '!!!<<<<<<<');
         allCars.then(values => {
             console.log(values);
-            // Promise.all(values).then(values => {
-            //     console.log(values, '<<');
-            //   });
+            Promise.all(`http://localhost:3000/engine?id=${values.id}&status=started`).then(values => {
+                console.log(values, '<<');
+              });
           });
 
 
