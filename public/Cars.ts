@@ -105,13 +105,18 @@ export class Car {
                 method: 'PATCH',
             })
             .then((response) => {  
-                console.log('<<!!', response)
+                console.log('<<!!')
                 if (response.status !== 200) {  
                     console.log('Status Code: ' +  
                     response.status); 
                     this.drive = false;
                     return this.drive;  
                 } 
+            },
+            (error) => { 
+                console.log(error);
+                this.drive = false;
+                return this.drive; 
             })
         });
     }
