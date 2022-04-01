@@ -146,7 +146,7 @@ export class Car {
             // let wayCar = Math.min(progresstime / timestamp)  (document.body.scrollWidth - this.car.getBoundingClientRect().width) * 
             this.car.style.transform = 'translateX(' + windoWidth + 'px)';
             console.log ( windoWidth, ' <windoWidth' );
-            if (progresstime < this.timestamp && this.drive) {
+            if (progresstime < timestamp && this.drive) {
                 console.log (progresstime < timestamp && this.drive, ' if' );
             window.requestAnimationFrame(this.step.bind(this));
             }
