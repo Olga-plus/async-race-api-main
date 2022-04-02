@@ -175,6 +175,9 @@ export class PageGarage {
                return res;
            });
            console.log(promisAll, 'romisAll');
+           promisAll.then(res => {
+            console.log(res, 'res2');
+           })
     }
 }
 export const garagePage = new PageGarage(callbackGarage);
