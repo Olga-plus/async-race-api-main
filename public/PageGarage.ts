@@ -150,7 +150,7 @@ export class PageGarage {
 
     raseAll() {
         allCars.then(values => {
-            let arr:any = [];
+            let arr = [];
             for (let i = 0; i < values.length; i++) {
                 arr.push(fetch(`http://localhost:3000/engine?id=${values[i].id}&status=started`))
             }
