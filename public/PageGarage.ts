@@ -160,11 +160,11 @@ export class PageGarage {
                 values.map(elem => {
                     fetch(elem).then(response => response.json()
                     .then(data => {
-                        console.log(data);
+                        console.log(data.distance);
                     }
                     ));
                 })
-                console.log(values, arrPromise, '>!<');
+                // console.log(values, arrPromise, '>!<');
               });
           });
     }
