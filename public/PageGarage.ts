@@ -170,7 +170,7 @@ export class PageGarage {
                  {method: 'PATCH'}))
             }
            Promise.all(arr).then(res =>
-           this.car.startedAll(res)
+            console.log( this.car.startedAll)
            ) 
     }
 }
