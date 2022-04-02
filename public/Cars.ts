@@ -91,6 +91,7 @@ export class Car {
     }
 
     startedAll(){
+        console.log('error');
             // this.timestamp = result.distance / result.velocity;
                this.lengthCar = this.car.getBoundingClientRect().right;
                console.log(this.timestamp, '<<this.timestamp', document.body.scrollWidth, '<<scrollWidth', this.car.getBoundingClientRect().width)
