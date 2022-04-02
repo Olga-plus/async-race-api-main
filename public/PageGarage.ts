@@ -4,20 +4,20 @@ import { Car } from "./Cars";
 const body = document.querySelector('body');
 const carsContainer = document.createElement('div');
 
-function cars(callbackCar:()=> void){
-    return fetch('http://localhost:3000/garage')
-          .then(response => response.json())
-          .then(result => {
-              result.forEach((elem: Car) => {
-                  let car = new Car(elem, callbackCar);
-                  return car;
-              })
-              console.log( result, 'function <sddAs')
-              return result;
-          });
-}
+// function cars(callbackCar:()=> void){
+//     return fetch('http://localhost:3000/garage')
+//           .then(response => response.json())
+//           .then(result => {
+//               result.forEach((elem: Car) => {
+//                   let car = new Car(elem, callbackCar);
+//                   return car;
+//               })
+//               console.log( result, 'function <sddAs')
+//               return result;
+//           });
+// }
 
-let allCars = cars(callbackCar);
+// let allCars = cars(callbackCar);
 export class PageGarage {
     btnCreate: HTMLButtonElement;
     btnUpdate: HTMLButtonElement;
@@ -37,7 +37,7 @@ export class PageGarage {
     id: number;
 
     callback: () => void;
-    carsAll: any;
+    carsAll: Car[];
 
     constructor(callback: () => void){
         this.createGaragePage();
@@ -45,7 +45,7 @@ export class PageGarage {
         fetch('http://localhost:3000/garage')
           .then(response => response.json())
           .then(result => {
-              this.carsAll = result.forEach((elem: Car) => {
+              this.carsAll = result.map((elem: Car) => {
                   this.car = new Car(elem, callbackCar);
                   return this.car;
               })
@@ -138,7 +138,9 @@ export class PageGarage {
             result;
             body.innerHTML = '';
             this.createGaragePage();
-            cars(callbackCar);
+            this.carsAll;
+            console.log(this.carsAll);
+            
         });
     }
 
@@ -156,32 +158,26 @@ export class PageGarage {
             result;
             body.innerHTML = '';
             this.createGaragePage();
-            cars(callbackCar);
+            // cars(callbackCar);
         });
     }
 
     raseAll() {
         
-        allCars.then(values => {
-            let arr = [];
-            for (let i = 0; i < values.length; i++) {
-                arr.push(fetch(`http://localhost:3000/engine?id=${values[i].id}&status=started`,
-                 {
-                    method: 'PATCH',
-                }))
+        this.carsAll
+            let arr: any = [];
+            for (let i = 0; i < this.carsAll.length; i++) {
+                arr.push(fetch(`http://localhost:3000/engine?id=${this.carsAll[i].id}&status=started`),
+                 {method: 'PATCH'})
             }
-
-            console.log(arr, 'NNn');
            Promise.all(arr).then(response =>  {
               
                console.log(response)
                     
                 // console.log(values, arrPromise, '>!<');
               });
-          });
     }
 }
-
 export const garagePage = new PageGarage(callbackGarage);
 
     function callbackGarage() {
