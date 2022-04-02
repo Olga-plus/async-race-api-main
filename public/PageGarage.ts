@@ -158,7 +158,7 @@ export class PageGarage {
             result;
             body.innerHTML = '';
             this.createGaragePage();
-            // cars(callbackCar);
+            this.car.renderCar();
         });
     }
 
@@ -171,6 +171,7 @@ export class PageGarage {
             }
            Promise.all(arr).then(res =>{
                console.log(res);
+
                this.car.startedAll();
            });
     }
