@@ -156,7 +156,8 @@ export class PageGarage {
             }
             
             console.log(arr, 'NNn');
-           Promise.all(arr).then(response => {
+           Promise.all(arr).then(response =>  {
+              
                console.log(response)
                     
                 // console.log(values, arrPromise, '>!<');
@@ -178,8 +179,7 @@ export const garagePage = new PageGarage(callbackGarage);
                     }).then(response => response.json())
                     .then(result => {
                         result;
-
-                        cars(callbackCar);
+                        this.renderCar();
                     });
                 break;
             case 'select':
