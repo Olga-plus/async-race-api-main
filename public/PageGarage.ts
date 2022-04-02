@@ -168,16 +168,13 @@ export class PageGarage {
             let arr: any = [];
             for (let i = 0; i < this.carsAll.length; i++) {
                 arr.push(fetch(`http://localhost:3000/engine?id=${this.carsAll[i].id}&status=started`,
-                 {method: 'PATCH'}))
+                 {method: 'PATCH'}).then(response => response.json()))
             }
           promisAll = Promise.all(arr).then(res =>{
                console.log(res, 'res');
                return res;
            });
            console.log(promisAll, 'romisAll');
-           promisAll.then(res => {
-            console.log(res, 'res2');
-           })
     }
 }
 export const garagePage = new PageGarage(callbackGarage);
