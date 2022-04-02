@@ -91,30 +91,11 @@ export class Car {
     }
 
     startedAll(){
-        console.log('error', this);
+        console.log('error', this.car , 'caaar');
             // this.timestamp = result.distance / result.velocity;
                this.lengthCar = this.car.getBoundingClientRect().right;
                console.log(this.timestamp, '<<!!his.timestamp', document.body.scrollWidth, '<<scrollWidth', this.car.getBoundingClientRect().width)
                window.requestAnimationFrame(this.step.bind(this));
-        //         fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
-        //             method: 'PATCH',
-        //         })
-        //         .then((response) => {  
-        //             console.log('<<!!')
-        //             if (response.status !== 200) {  
-        //                 console.log('Status Code: ' +  
-        //                 response.status); 
-        //                 this.drive = false;
-        //                 return this.drive;  
-        //             } 
-        //         },
-        //         (error) => { 
-        //             console.log(error);
-        //             this.drive = false;
-        //             return this.drive; 
-        //         })
-        // }
-        // )
     };
 
     // startedAll(){

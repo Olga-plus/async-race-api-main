@@ -155,12 +155,10 @@ export class PageGarage {
         })
         .then(response => response.json())
         .then(result => {
-            this.carsAll = result.map((elem: Car) => {
-                this.car = new Car(elem, callbackCar);
-                return this.car;
+            result.map((elem: any) => {
+                console.log(elem, '<<<Q')
             })
-            console.log( this.carsAll, 'function <<CARSss>>')
-            return this.carsAll;
+            console.log( this.carsAll, result, 'function <<CARSss>>')
         });
     }
 
