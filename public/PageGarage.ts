@@ -159,10 +159,9 @@ export class PageGarage {
             body.innerHTML = '';
             this.createGaragePage();
             this.carsAll.map((elem: Car) => {
-                this.car = new Car(elem, callbackCar);
-                return this.car;
+                this.car.renderCar();
             })
-            console.log( this.carsAll, 'function <<CARSss>>')
+            console.log( this.carsAll, 'function <<CARS!>>')
             return this.carsAll;
         });
     }
