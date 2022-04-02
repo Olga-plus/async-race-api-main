@@ -4,13 +4,6 @@ import { Car } from "./Cars";
 const body = document.querySelector('body');
 const carsContainer = document.createElement('div');
 
-// export function cardXs(): Card[]{
-//     return data.map(function (item) {
-//         const cardX = new Card(item);
-//             return cardX;
-//         });
-// } 
-
 function cars(callbackCar:()=> void){
     return fetch('http://localhost:3000/garage')
           .then(response => response.json())
@@ -18,8 +11,7 @@ function cars(callbackCar:()=> void){
               result.forEach((elem: Car) => {
                   let car = new Car(elem, callbackCar);
                   return car;
-              });
-                // result.forEach((item) => carsContainer.appendChild(item));
+              })
               console.log( result, 'function <sddAs')
               return result;
           });
@@ -157,8 +149,6 @@ export class PageGarage {
     }
 
     raseAll() {
-        // let arCars = arrsCars.then(res => started());
-        // console.log( allCars, '!!!<<<<<<<');
         allCars.then(values => {
             let arr:string[] = [];
             for (let i = 0; i < values.length; i++) {
@@ -168,13 +158,13 @@ export class PageGarage {
             console.log(arr, 'NNn');
             let arrPromise = Promise.all(arr).then(values => {
                 values.map(elem => {
-                    fetch(elem).then(response => response.json());
+                    fetch(elem).then(response => response.json().then(
+                        
+                    ));
                 })
                 console.log(values, arrPromise, '>!<');
               });
           });
-
-
     }
 }
 
