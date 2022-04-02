@@ -183,7 +183,6 @@ export const garagePage = new PageGarage(callbackGarage);
                     });
                 break;
             case 'select':
-                console.log(garagePage)
                 garagePage.inputColorUpdate.removeAttribute("disabled");
                 garagePage.inputUpdate.removeAttribute("disabled");
                 garagePage.inputColorUpdate.setAttribute('value', this.color);
