@@ -178,7 +178,8 @@ export const garagePage = new PageGarage(callbackGarage);
                     }).then(response => response.json())
                     .then(result => {
                         result;
-                        callbackGarage();
+                        body.innerHTML = '';
+                        cars(callbackCar);
                     });
                 break;
             case 'select':
