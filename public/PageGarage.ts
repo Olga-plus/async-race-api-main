@@ -49,7 +49,7 @@ export class PageGarage {
                   this.car = new Car(elem, callbackCar);
                   return this.car;
               })
-              console.log( this.carsAll, 'function <<CARS>>s')
+              console.log( this.carsAll, 'function <<CARS>>')
               return this.carsAll;
           });
     }
@@ -169,8 +169,8 @@ export class PageGarage {
                 arr.push(fetch(`http://localhost:3000/engine?id=${this.carsAll[i].id}&status=started`,
                  {method: 'PATCH'}))
             }
-           Promise.all(arr).then(
-            
+           Promise.all(arr).then(res =>
+           console.log(res)
            ) 
     }
 }
