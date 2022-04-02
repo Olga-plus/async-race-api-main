@@ -90,6 +90,10 @@ export class Car {
         this.callback();
     }
 
+    startedAll(){
+
+    };
+
     started(){
         this.evtType = 'started';
         console.log(this.id);

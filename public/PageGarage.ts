@@ -31,15 +31,27 @@ export class PageGarage {
     inputUpdate: HTMLInputElement;
     inputColorCreate: HTMLInputElement;
     inputColorUpdate: HTMLInputElement;
+    car: Car;
 
     inputDisable: boolean = true;
     id: number;
 
     callback: () => void;
+    carsAll: any;
 
     constructor(callback: () => void){
         this.createGaragePage();
-        this.callback = callback
+        this.callback = callback;
+        fetch('http://localhost:3000/garage')
+          .then(response => response.json())
+          .then(result => {
+              this.carsAll = result.forEach((elem: Car) => {
+                  this.car = new Car(elem, callbackCar);
+                  return this.car;
+              })
+              console.log( result, 'function <sddAs')
+              return result;
+          });
     }
 
     createGaragePage(){
@@ -149,12 +161,16 @@ export class PageGarage {
     }
 
     raseAll() {
+        
         allCars.then(values => {
             let arr = [];
             for (let i = 0; i < values.length; i++) {
-                arr.push(fetch(`http://localhost:3000/engine?id=${values[i].id}&status=started`))
+                arr.push(fetch(`http://localhost:3000/engine?id=${values[i].id}&status=started`,
+                 {
+                    method: 'PATCH',
+                }))
             }
-            
+
             console.log(arr, 'NNn');
            Promise.all(arr).then(response =>  {
               
