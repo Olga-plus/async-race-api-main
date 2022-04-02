@@ -158,8 +158,10 @@ export class PageGarage {
             console.log(arr, 'NNn');
             let arrPromise = Promise.all(arr).then(values => {
                 values.map(elem => {
-                    fetch(elem).then(response => response.json().then(
-                        
+                    fetch(elem).then(response => response.json()
+                    .then(data => {
+                        console.log(data);
+                    }
                     ));
                 })
                 console.log(values, arrPromise, '>!<');
