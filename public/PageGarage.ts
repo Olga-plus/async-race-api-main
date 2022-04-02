@@ -163,7 +163,7 @@ export class PageGarage {
     }
 
     raseAll() {
-        
+        console.log(this.carsAll, 'GGG<<')
         this.carsAll
             let arr: any = [];
             for (let i = 0; i < this.carsAll.length; i++) {
