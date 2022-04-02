@@ -179,6 +179,7 @@ export const garagePage = new PageGarage(callbackGarage);
                     .then(result => {
                         result;
                         body.innerHTML = '';
+                        this.createGaragePage();
                         cars(callbackCar);
                     });
                 break;
