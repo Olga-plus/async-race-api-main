@@ -150,14 +150,14 @@ export class PageGarage {
 
     raseAll() {
         allCars.then(values => {
-            let arr:string[] = [];
+            let arr:any = [];
             for (let i = 0; i < values.length; i++) {
-                arr.push(`http://localhost:3000/engine?id=${values[i].id}&status=started`)
+                arr.push(fetch(`http://localhost:3000/engine?id=${values[i].id}&status=started`))
             }
             
             console.log(arr, 'NNn');
-            let arrPromise = Promise.all(arr).then(values => {
-
+           Promise.all(arr).then(response => {
+               console.log(response)
                     
                 // console.log(values, arrPromise, '>!<');
               });
