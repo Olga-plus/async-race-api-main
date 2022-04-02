@@ -49,8 +49,8 @@ export class PageGarage {
                   this.car = new Car(elem, callbackCar);
                   return this.car;
               })
-              console.log( result, 'function <sddAs')
-              return result;
+              console.log( this.carsAll, 'function <<CARS>>s')
+              return this.carsAll;
           });
     }
 
@@ -169,12 +169,9 @@ export class PageGarage {
                 arr.push(fetch(`http://localhost:3000/engine?id=${this.carsAll[i].id}&status=started`,
                  {method: 'PATCH'}))
             }
-           Promise.all(arr).then(response =>  {
-              
-               console.log(response)
-                    
-                // console.log(values, arrPromise, '>!<');
-              });
+           Promise.all(arr).then(
+            
+           ) 
     }
 }
 export const garagePage = new PageGarage(callbackGarage);
