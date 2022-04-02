@@ -171,7 +171,7 @@ export class PageGarage {
             }
            Promise.all(arr).then(res =>{
                console.log(res);
-               this.car.startedAll();
+               this.car.startedAll.bind(this);
            });
     }
 }
