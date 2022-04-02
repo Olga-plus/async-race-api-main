@@ -155,13 +155,11 @@ export class PageGarage {
         })
         .then(response => response.json())
         .then(result => {
-            result;
-            body.innerHTML = '';
-            this.createGaragePage();
-            this.carsAll.map((elem: Car) => {
+            this.carsAll = result.map((elem: Car) => {
                 this.car.renderCar();
+                return this.car;
             })
-            console.log( this.carsAll, 'function <<CARS!>>')
+            console.log( this.carsAll, 'function <<CARS!!!>>')
             return this.carsAll;
         });
     }
