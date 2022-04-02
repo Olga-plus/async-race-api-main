@@ -166,8 +166,8 @@ export class PageGarage {
         console.log( 'GGG<<')
             let arr: any = [];
             for (let i = 0; i < this.carsAll.length; i++) {
-                arr.push(fetch(`http://localhost:3000/engine?id=${this.carsAll[i].id}&status=started`),
-                 {method: 'PATCH'})
+                arr.push(fetch(`http://localhost:3000/engine?id=${this.carsAll[i].id}&status=started`,
+                 {method: 'PATCH'}))
             }
            Promise.all(arr).then(response =>  {
               
