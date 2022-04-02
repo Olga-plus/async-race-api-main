@@ -171,10 +171,10 @@ export class PageGarage {
                  {method: 'PATCH'}))
             }
           promisAll = Promise.all(arr).then(res =>{
-               console.log(res);
+               console.log(res, 'res');
                return res;
            });
-           console.log(promisAll);
+           console.log(promisAll, 'romisAll');
     }
 }
 export const garagePage = new PageGarage(callbackGarage);
