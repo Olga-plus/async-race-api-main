@@ -173,7 +173,9 @@ export class PageGarage {
             }
           promisAll = Promise.all(arr).then(res =>{
               res.map (elem => {
-                console.log(elem[0], 'AAAj')
+                this.timestamp = elem.distance / elem.velocity;
+                this.car.startedAll();
+                console.log(elem.velocity, 'nn')
               })
             //    this.car.startedAll();
 
