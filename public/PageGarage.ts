@@ -175,7 +175,7 @@ export class PageGarage {
               res.map (elem => {
                 this.timestamp = elem.distance / elem.velocity;
                 this.car.startedAll( this.timestamp, this.car.id);
-                console.log( this.timestamp,  this.car, '<<nV')
+                console.log( elem , this.timestamp,  this.car, '<<nV')
               })
             //    this.car.startedAll();
 
