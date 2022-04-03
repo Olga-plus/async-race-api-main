@@ -91,11 +91,11 @@ export class Car {
     }
 
     startedAll(){
-        console.log('error', this.timestamp, 'cAaar');
+        console.log('error', this, 'cAaar');
             // this.timestamp = result.distance / result.velocity;
-               this.lengthCar = this.car.getBoundingClientRect().right;
-               console.log(this.timestamp, '<<!!his.timestamp', document.body.scrollWidth, '<<scrollWidth', this.car.getBoundingClientRect().width)
-               window.requestAnimationFrame(this.step.bind(this));
+            //    this.lengthCar = this.car.getBoundingClientRect().right;
+            //    console.log(this.timestamp, '<<!!his.timestamp', document.body.scrollWidth, '<<scrollWidth', this.car.getBoundingClientRect().width)
+            //    window.requestAnimationFrame(this.step.bind(this));
     };
 
     // startedAll(){
