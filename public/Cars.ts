@@ -90,11 +90,12 @@ export class Car {
         this.callback();
     }
 
-    startedAll(_timestamp: number){
+    startedAll(_timestamp: number, _id:number){
         console.log('error', _timestamp, this.id, 'cAaar');
         this.timestamp = _timestamp;
+        this.id = _id;
                this.lengthCar = this.car.getBoundingClientRect().right;
-               console.log(this.timestamp, '<<this.timestamp', document.body.scrollWidth, '<<scrollWidth', this.car.getBoundingClientRect().width)
+               console.log(this.timestamp, '<<this.timestamp')
                window.requestAnimationFrame(this.step.bind(this));
                 fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
                     method: 'PATCH',
