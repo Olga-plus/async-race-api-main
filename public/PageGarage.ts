@@ -38,6 +38,7 @@ export class PageGarage {
 
     callback: () => void;
     carsAll: Car[];
+    timestamp: number;
 
     constructor(callback: () => void){
         this.createGaragePage();
@@ -171,10 +172,14 @@ export class PageGarage {
                  {method: 'PATCH'}).then(response => response.json()))
             }
           promisAll = Promise.all(arr).then(res =>{
-               console.log(res, 'rEss');
-               this.car.startedAll(res);
+              res.map (elem => {
+                console.log(res[0], 'jjjj')
+              })
+            //    this.car.startedAll();
 
            });
+
+
            console.log(promisAll, 'romisAll');
     }
 }
