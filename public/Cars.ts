@@ -99,7 +99,7 @@ export class Car {
     // };
 
     startedAll(result: any){
-        result.then((response: { json: () => any; }) => response.json())
+        result
         .then((result: { distance: number; velocity: number; }) => {
             this.timestamp = result.distance / result.velocity;
                this.lengthCar = this.car.getBoundingClientRect().right;
