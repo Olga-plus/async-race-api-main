@@ -164,7 +164,7 @@ export class PageGarage {
     }
 
     raseAll() {
-        console.log( 'GGG<<')
+        console.log( 'GGG<<' )
         let promisAll;
             let arr: any = [];
             for (let i = 0; i < this.carsAll.length; i++) {
@@ -174,8 +174,8 @@ export class PageGarage {
           promisAll = Promise.all(arr).then(res =>{
               res.map (elem => {
                 this.timestamp = elem.distance / elem.velocity;
-                this.car.startedAll( this.timestamp, this.car.id);
-                console.log( elem , this.timestamp,  this.car, '<<nV')
+                this.car.startedAll( this.timestamp );
+                console.log( elem , this.timestamp, '<<VnV')
               })
             //    this.car.startedAll();
 
