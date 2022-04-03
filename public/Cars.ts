@@ -90,8 +90,8 @@ export class Car {
         this.callback();
     }
 
-    startedAll(){
-        console.log('error', this, 'cAaar');
+    startedAll(_aff: number){
+        console.log('error', _aff, 'cAaar');
             // this.timestamp = result.distance / result.velocity;
             //    this.lengthCar = this.car.getBoundingClientRect().right;
             //    console.log(this.timestamp, '<<!!his.timestamp', document.body.scrollWidth, '<<scrollWidth', this.car.getBoundingClientRect().width)
