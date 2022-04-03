@@ -90,11 +90,12 @@ export class Car {
         this.callback();
     }
 
-    startedAll(_timestamp: number, _id:number){
+    startedAll(_timestamp: number, _id:number, _car: any){
         this.evtType === 'started';
         console.log('error', _timestamp, this.id, 'cAaar');
         this.timestamp = _timestamp;
         this.id = _id;
+        this.car = _car;
                this.lengthCar = this.car.getBoundingClientRect().right;
                window.requestAnimationFrame(this.step.bind(this));
                 fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
