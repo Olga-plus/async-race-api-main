@@ -171,8 +171,8 @@ export class PageGarage {
                  {method: 'PATCH'}).then(response => response.json()))
             }
           promisAll = Promise.all(arr).then(res =>{
-               console.log(res, 'rEs');
-               this.car.startedAll();
+               console.log(res, 'rEss');
+               this.car.startedAll(res);
 
            });
            console.log(promisAll, 'romisAll');

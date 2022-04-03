@@ -90,41 +90,41 @@ export class Car {
         this.callback();
     }
 
-    startedAll(){
-        console.log('error', this, 'cAaar');
-            // this.timestamp = result.distance / result.velocity;
-               this.lengthCar = this.car.getBoundingClientRect().right;
-               console.log(this.timestamp, '<<!!his.timestamp', document.body.scrollWidth, '<<scrollWidth', this.car.getBoundingClientRect().width)
-               window.requestAnimationFrame(this.step.bind(this));
-    };
-
     // startedAll(){
-    //     result.then((response: { json: () => any; }) => response.json())
-    //     .then((result: { distance: number; velocity: number; }) => {
-    //         this.timestamp = result.distance / result.velocity;
+    //     console.log('error', 'cAaar');
+    //         // this.timestamp = result.distance / result.velocity;
     //            this.lengthCar = this.car.getBoundingClientRect().right;
-    //            console.log(this.timestamp, '<<this.timestamp', document.body.scrollWidth, '<<scrollWidth', this.car.getBoundingClientRect().width)
+    //            console.log(this.timestamp, '<<!!his.timestamp', document.body.scrollWidth, '<<scrollWidth', this.car.getBoundingClientRect().width)
     //            window.requestAnimationFrame(this.step.bind(this));
-    //             fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
-    //                 method: 'PATCH',
-    //             })
-    //             .then((response) => {  
-    //                 console.log('<<!!')
-    //                 if (response.status !== 200) {  
-    //                     console.log('Status Code: ' +  
-    //                     response.status); 
-    //                     this.drive = false;
-    //                     return this.drive;  
-    //                 } 
-    //             },
-    //             (error) => { 
-    //                 console.log(error);
-    //                 this.drive = false;
-    //                 return this.drive; 
-    //             })
-    //     }
-    //     )
     // };
+
+    startedAll(result: any){
+        result.then((response: { json: () => any; }) => response.json())
+        .then((result: { distance: number; velocity: number; }) => {
+            this.timestamp = result.distance / result.velocity;
+               this.lengthCar = this.car.getBoundingClientRect().right;
+               console.log(this.timestamp, '<<this.timestamp', document.body.scrollWidth, '<<scrollWidth', this.car.getBoundingClientRect().width)
+               window.requestAnimationFrame(this.step.bind(this));
+                fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
+                    method: 'PATCH',
+                })
+                .then((response) => {  
+                    console.log('<<!!')
+                    if (response.status !== 200) {  
+                        console.log('Status Code: ' +  
+                        response.status); 
+                        this.drive = false;
+                        return this.drive;  
+                    } 
+                },
+                (error) => { 
+                    console.log(error);
+                    this.drive = false;
+                    return this.drive; 
+                })
+        }
+        )
+    };
 
     started(){
         this.evtType = 'started';
