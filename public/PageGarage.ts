@@ -177,8 +177,6 @@ export class PageGarage {
                 this.car.startedAll( this.timestamp );
                 console.log( elem , this.timestamp, '<<VnV')
               })
-            //    this.car.startedAll();
-
            });
 
 
