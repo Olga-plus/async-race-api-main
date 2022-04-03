@@ -171,8 +171,9 @@ export class PageGarage {
                  {method: 'PATCH'}).then(response => response.json()))
             }
           promisAll = Promise.all(arr).then(res =>{
-               console.log(res, 'res');
-               return res;
+               console.log(res, 'rEs');
+               this.raseAll();
+
            });
            console.log(promisAll, 'romisAll');
     }
