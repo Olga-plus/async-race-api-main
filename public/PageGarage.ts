@@ -173,7 +173,7 @@ export class PageGarage {
             }
           promisAll = Promise.all(arr).then(res =>{
               res.map (elem => {
-                console.log(res[0], 'jjjj')
+                console.log(elem[0], 'AAAj')
               })
             //    this.car.startedAll();
 
