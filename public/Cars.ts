@@ -92,7 +92,7 @@ export class Car {
 
     startedAll(_timestamp: number, _id:number, _car: any){
         this.evtType === 'started';
-        console.log('error', _timestamp, this.id, 'cAaar');
+        console.log('error', _timestamp, _id, _car, 'CCAaar');
         this.timestamp = _timestamp;
         this.id = _id;
         this.car = _car;
