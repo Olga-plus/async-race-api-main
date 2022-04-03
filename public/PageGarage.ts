@@ -171,11 +171,10 @@ export class PageGarage {
                  {method: 'PATCH'}).then(response => response.json()))
             }
           promisAll = Promise.all(arr).then(res =>{
-               console.log(res, 'res');
-               
+               console.log(res, 'rEs');
+               this.car.startedAll();
 
            });
-           this.raseAll();
            console.log(promisAll, 'romisAll');
     }
 }
