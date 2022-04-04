@@ -156,15 +156,10 @@ export class PageGarage {
         })
         .then(response => response.json())
         .then(result => {
-            // result.map((elem: any) => {
-            //     console.log( elem, "this.carsAll")
-            //     elem.renderCar();
-            // })
-            this.car.carContainer.innerHTML = '' 
+
                 this.car.name = result.name;
                 this.car.color = result.color;
-                this.car.renderCar();
-            // this.car. = new Car(result, callbackCar);
+            this.car = new Car(result, callbackCar);
             console.log( this.car, result, '<<AACARSss>>')
         });
     }
