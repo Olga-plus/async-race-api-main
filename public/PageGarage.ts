@@ -172,7 +172,7 @@ export class PageGarage {
                  {method: 'PATCH'}).then(response => response.json()))
             }
           promisAll = Promise.all(arr).then(res =>{
-              res.map ((elem, i) => {
+              res.forEach ((elem, i) => {
                 this.timestamp = elem.distance / elem.velocity;
                 this.car.startedAll( this.timestamp, this.carsAll[i+1].id, this.carsAll[i].car);
                 console.log( i, '<<I', this.carsAll[i].id,'<<SSVVV')
