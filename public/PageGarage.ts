@@ -137,6 +137,8 @@ export class PageGarage {
         }).then(response => response.json())
         .then(result => {
             console.log( this.car, result, '<<Crrrrrss>>')
+            body.innerHTML = '';
+            this.createGaragePage();
             this.carsAll.push(result);
             this.carsAll.map(el => {
                 this.car = new Car(el, callbackCar);
@@ -199,8 +201,7 @@ export const garagePage = new PageGarage(callbackGarage);
                         method: 'DELETE',
                     }).then(response => response.json())
                     .then(result => {
-                        result;
-                        this.renderCar();
+                     result;
                     });
                 break;
             case 'select':
