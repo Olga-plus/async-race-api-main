@@ -117,6 +117,7 @@ export class PageGarage {
         this.btnGenerate = document.createElement('button');
         this.btnGenerate.className = "btn generate-btn";
         this.btnGenerate.innerText = "generate";
+        this.btnGenerate.onclick = this.generate.bind(this);
 
         wrapperInputUpdate.append(this.inputUpdate, this.inputColorUpdate, this.btnUpdate);
         
@@ -198,11 +199,12 @@ export class PageGarage {
         {method: 'GET'})
           .then(response => response.json())
           .then(result => {
+            console.log( result, 'res <<CARS>>')
               this.carsAll = result.map((elem: Car) => {
                   this.car = new Car(elem, callbackCar);
                   return this.car;
               })
-              console.log( this.carsAll, 'function <<CARS>>')
+              
               return this.carsAll;
           });
     }
