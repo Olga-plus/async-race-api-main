@@ -201,10 +201,7 @@ export const garagePage = new PageGarage(callbackGarage);
                         method: 'DELETE',
                     }).then(response => response.json())
                     .then(result => {
-                        console.log(result, '<<<RE')
-                    //  result.map(el => {
-                    //     this.car = new Car(el, callbackCar);
-                    //  })
+                        console.log( this.carsAll, '<<<<<<<<<<')
                     });
                 break;
             case 'select':
