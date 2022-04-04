@@ -188,6 +188,24 @@ export class PageGarage {
            });
            console.log(arr, 'romisAll');
     }
+
+    reser(){
+
+    }
+
+    generate(){
+        fetch('http://localhost:3000/garage/_limit=10',
+        {method: 'GET'})
+          .then(response => response.json())
+          .then(result => {
+              this.carsAll = result.map((elem: Car) => {
+                  this.car = new Car(elem, callbackCar);
+                  return this.car;
+              })
+              console.log( this.carsAll, 'function <<CARS>>')
+              return this.carsAll;
+          });
+    }
 }
 export const garagePage = new PageGarage(callbackGarage);
 
