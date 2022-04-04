@@ -201,7 +201,16 @@ export const garagePage = new PageGarage(callbackGarage);
                         method: 'DELETE',
                     }).then(response => response.json())
                     .then(result => {
-                        console.log( this.carsAll, '<<<<<<<<<<')
+                        fetch('http://localhost:3000/garage')
+                        .then(response => response.json())
+                        .then(result => {
+                            this.carsAll = result.map((elem: Car) => {
+                                this.car = new Car(elem, callbackCar);
+                                return this.car;
+                            })
+                            console.log( this.carsAll, 'function <<CARS>>')
+                            return this.carsAll;
+                        });
                     });
                 break;
             case 'select':
@@ -214,11 +223,3 @@ export const garagePage = new PageGarage(callbackGarage);
             break;
         }
     }
-// console.log(allCars
-// .then(result => {
-//     // result.map((elem: any) => {
-//         console.log(result, '<<!!<');
-//         // carsContainer.appendChild(elem.carContainer);
-//     })
-// // })
-// );
