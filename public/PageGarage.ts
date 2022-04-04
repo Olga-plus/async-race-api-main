@@ -207,9 +207,9 @@ export class PageGarage {
                     j = 0;
                     shuffleFirst;
                     shuffleSecond;
-                    nameCar.push(shuffleFirst[j] + '' + shuffleSecond[j]) 
+                    nameCar.push(shuffleFirst[j] + ' ' + shuffleSecond[j]) 
                 } else {
-                    nameCar.push(shuffleFirst[j] + '' + shuffleSecond[j])
+                    nameCar.push(shuffleFirst[j] + ' ' + shuffleSecond[j])
                 }
             }
             
