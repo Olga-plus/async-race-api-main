@@ -31,6 +31,7 @@ export class Car {
     renderCar() {
         this.carContainer = document.createElement('div');
         this.carContainer.className = 'car-container';
+        this.carContainer.id = `${this.id + 'v'}`
         body.appendChild(this.carContainer);
 
         const wrapperBtn = document.createElement('div');
