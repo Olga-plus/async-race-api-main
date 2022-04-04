@@ -120,7 +120,7 @@ export class Car {
         // .then((_result: { distance: number; velocity: number; }) => {
             this.timestamp = _result.distance / _result.velocity;
                this.lengthCar = this.car.getBoundingClientRect().right;
-               console.log(this.timestamp, '<<this.timestamp', document.body.scrollWidth, '<<scrollWidth', this.car.getBoundingClientRect().width)
+               console.log(this.timestamp, '<<this.timestamp', this.car, '<<this.car')
                window.requestAnimationFrame(this.step.bind(this));
                 fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
                     method: 'PATCH',
