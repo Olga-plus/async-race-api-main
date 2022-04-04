@@ -201,6 +201,8 @@ export const garagePage = new PageGarage(callbackGarage);
                         method: 'DELETE',
                     }).then(response => response.json())
                     .then(result => {
+                        body.innerHTML = '';
+                        garagePage.createGaragePage();
                         fetch('http://localhost:3000/garage')
                         .then(response => response.json())
                         .then(result => {
