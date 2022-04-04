@@ -160,8 +160,8 @@ export class PageGarage {
             //     console.log( elem, "this.carsAll")
             //     elem.renderCar();
             // })
-            result.renderCar();
-            console.log( this.carsAll, result, 'function <<CARSss>>')
+            this.car = new Car(result, callbackCar);
+            console.log( this.car, result, 'function <<CARSss>>')
         });
     }
 
