@@ -203,7 +203,18 @@ export const garagePage = new PageGarage(callbackGarage);
                     .then(result => {
                         body.innerHTML = '';
                         garagePage.createGaragePage();
-                    });
+                        garagePage.carsAll 
+                        fetch('http://localhost:3000/garage')
+                        .then(response => response.json())
+                        .then(result => {
+                            garagePage.carsAll = result.map((elem: Car) => {
+                                garagePage.car = new Car(elem, callbackCar);
+                                return garagePage.car;
+                            })
+                            console.log( garagePage.carsAll , '<<CARS>>')
+                            return garagePage.carsAll ;
+                        });
+                                    });
                 break;
             case 'select':
                 garagePage.inputColorUpdate.removeAttribute("disabled");
