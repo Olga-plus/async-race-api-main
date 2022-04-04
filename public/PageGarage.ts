@@ -205,9 +205,11 @@ export class PageGarage {
             for (let j = 0; j < nameSecond.length; j++){
                 if (j >= nameSecond.length) {
                     j = 0;
-                   nameCar.push(shuffleFirst[j] + shuffleSecond[j]) 
+                    shuffleFirst;
+                    shuffleSecond;
+                    nameCar.push(shuffleFirst[j] + '' + shuffleSecond[j]) 
                 } else {
-                    nameCar.push(shuffleFirst[j] + shuffleSecond[j])
+                    nameCar.push(shuffleFirst[j] + '' + shuffleSecond[j])
                 }
             }
             
