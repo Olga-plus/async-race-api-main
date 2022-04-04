@@ -160,10 +160,13 @@ export class PageGarage {
             //     console.log( elem, "this.carsAll")
             //     elem.renderCar();
             // })
-            this.car.name = result.name;
-            this.car.color = result.color;
+            function changeSet(){
+                this.car.name = result.name;
+                this.car.color = result.color;
+            }
+            changeSet();
             // this.car = new Car(result, callbackCar);
-            console.log( this.car, result, 'f <<CARSss>>')
+            console.log( this.car, result, '<<CARSss>>')
         });
     }
 
