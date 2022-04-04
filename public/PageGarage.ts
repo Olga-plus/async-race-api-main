@@ -180,7 +180,7 @@ export class PageGarage {
            });
 
 
-           console.log(promisAll, 'romisAll');
+           console.log(arr, 'romisAll');
     }
 }
 export const garagePage = new PageGarage(callbackGarage);
