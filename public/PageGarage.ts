@@ -156,10 +156,8 @@ export class PageGarage {
         })
         .then(response => response.json())
         .then(result => {
-            body.innerHTML = '';
             result.map((elem: any) => {
-                console.log( "this.carsAll")
-                elem.renderCar();
+                console.log( elem, "this.carsAll")
             })
             console.log( this.carsAll, result, 'function <<CARSss>>')
         });
