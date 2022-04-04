@@ -90,44 +90,18 @@ export class Car {
         this.callback();
     }
 
-    startedAll(_timestamp: number, _id:number, _car: any){
-        this.evtType === 'started';
-        console.log('error', _timestamp, _id, _car, 'CCAaar');
-        this.timestamp = _timestamp;
-        this.id = _id;
-        this.car = _car;
-               this.lengthCar = this.car.getBoundingClientRect().right;
-               window.requestAnimationFrame(this.step.bind(this));
-                fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
-                    method: 'PATCH',
-                })
-                .then((response) => {  
-                    if (response.status !== 200) {  
-                        console.log('Status Code: ' +  
-                        response.status); 
-                        this.drive = false;
-                        return this.drive;  
-                    } 
-                },
-                (error) => { 
-                    console.log(error);
-                    this.drive = false;
-                    return this.drive; 
-                })
-    };
-
-    // startedAll(){
-    //     result.then((response: { json: () => any; }) => response.json())
-    //     .then((result: { distance: number; velocity: number; }) => {
-    //         this.timestamp = result.distance / result.velocity;
+    // startedAll(_timestamp: number, _id:number, _car: any){
+    //     this.evtType === 'started';
+    //     console.log('error', _timestamp, _id, _car, 'CCAaar');
+    //     this.timestamp = _timestamp;
+    //     this.id = _id;
+    //     this.car = _car;
     //            this.lengthCar = this.car.getBoundingClientRect().right;
-    //            console.log(this.timestamp, '<<this.timestamp', document.body.scrollWidth, '<<scrollWidth', this.car.getBoundingClientRect().width)
     //            window.requestAnimationFrame(this.step.bind(this));
     //             fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
     //                 method: 'PATCH',
     //             })
     //             .then((response) => {  
-    //                 console.log('<<!!')
     //                 if (response.status !== 200) {  
     //                     console.log('Status Code: ' +  
     //                     response.status); 
@@ -140,9 +114,34 @@ export class Car {
     //                 this.drive = false;
     //                 return this.drive; 
     //             })
-    //     }
-    //     )
     // };
+
+    startedAll(_result: { distance: number; velocity: number; }){
+        // .then((_result: { distance: number; velocity: number; }) => {
+            this.timestamp = _result.distance / _result.velocity;
+               this.lengthCar = this.car.getBoundingClientRect().right;
+               console.log(this.timestamp, '<<this.timestamp', document.body.scrollWidth, '<<scrollWidth', this.car.getBoundingClientRect().width)
+               window.requestAnimationFrame(this.step.bind(this));
+                fetch(`http://localhost:3000/engine?id=${this.id}&status=drive`, {
+                    method: 'PATCH',
+                })
+                .then((response) => {  
+                    console.log('<<!!')
+                    if (response.status !== 200) {  
+                        console.log('Status Code: ' +  
+                        response.status); 
+                        this.drive = false;
+                        return this.drive;  
+                    } 
+                },
+                (error) => { 
+                    console.log(error);
+                    this.drive = false;
+                    return this.drive; 
+                })
+        // }
+        // )
+    };
 
     started(){
         this.evtType = 'started';
