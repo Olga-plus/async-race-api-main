@@ -196,10 +196,18 @@ export class PageGarage {
 
     generate(){
         let arrCars = [];
-        const nameCar = ['Tesla', 'Nissan', 'Ford', 'Toyota', 'Jaguar', 'Porsche', 'KIA'];
+        const nameFirst = ['Tesla', 'Nissan', 'Ford', 'Toyota', 'Jaguar', 'Porsche', 'KIA'];
         const nameSecond = ['GT', 'GTI', 'Camry', 'Corsa', 'Combi', 'RiA', 'DB9'];
+        const nameCar = [];
+        const shuffle = ( nameFirst: string[]) => {
+            return  nameFirst.sort(() => Math.round(Math.random() * 100) - 50);
+        }
+        // for (let i = 0; i < 100; i++){
+        //     nameCar.push()
+        // }
         let color = (Math.random().toString(16) + '000000').substring(2,8).toUpperCase();
         console.log('color', color);
+        console.log( 'shuffl', shuffle);
         // fetch('http://localhost:3000/garage/_limit=10',
         // {
         //     method: 'GET',
