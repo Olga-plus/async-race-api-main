@@ -203,15 +203,6 @@ export const garagePage = new PageGarage(callbackGarage);
                     .then(result => {
                         body.innerHTML = '';
                         garagePage.createGaragePage();
-                        let rezID = this.car.id
-                        garagePage.carsAll.map((el: Car) => {
-                            if (el.id === rezID) {
-                                el.remove();
-                            } else {
-                                this.car = new Car(el, callbackCar);
-                            }
-                        })
-                            console.log(  garagePage.carsAll, 'function <<CBBffS>>')
                     });
                 break;
             case 'select':
