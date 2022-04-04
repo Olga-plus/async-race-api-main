@@ -158,10 +158,15 @@ export class PageGarage {
         .then(result => {
             body.innerHTML = '';
             this.createGaragePage();
-            this.car.name = result.name;
-            this.car.color = result.color;
+            let rezID = result.id;
             this.carsAll.map(el => {
-                this.car = new Car(el, callbackCar);
+                if (el.id === rezID) {
+                    el.name = result.name;
+                    el.color = result.color;
+                    this.car = new Car(el, callbackCar);
+                } else {
+                    this.car = new Car(el, callbackCar);
+                }
             })
 
             //     this.car.name = result.name;
