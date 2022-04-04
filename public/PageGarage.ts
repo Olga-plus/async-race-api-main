@@ -136,6 +136,7 @@ export class PageGarage {
             }
         }).then(response => response.json())
         .then(result => {
+            console.log( this.car, result, '<<CARSss>>')
             body.innerHTML = '';
             this.createGaragePage();
             let rezID = result.id;
@@ -174,7 +175,7 @@ export class PageGarage {
                     this.car = new Car(el, callbackCar);
                 }
             })
-            console.log( this.car, result, '<<AACARSss>>')
+            
         });
     }
 
