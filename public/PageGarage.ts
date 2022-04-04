@@ -157,6 +157,9 @@ export class PageGarage {
         .then(response => response.json())
         .then(result => {
             body.innerHTML = '';
+            this.createGaragePage();
+            this.car.name = result.name;
+            this.car.color = result.color;
             this.carsAll.map(el => {
                 this.car = new Car(el, callbackCar);
             })
