@@ -156,6 +156,7 @@ export class PageGarage {
         })
         .then(response => response.json())
         .then(result => {
+            body.innerHTML = '';
             result.map((elem: any) => {
                 elem.renderCar();
             })
