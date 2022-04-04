@@ -136,8 +136,11 @@ export class PageGarage {
             }
         }).then(response => response.json())
         .then(result => {
-            console.log( this.car, result, '<<CAAAAss>>')
-            this.car = new Car(result, callbackCar);
+            console.log( this.car, result, '<<Crrrrrss>>')
+            this.carsAll.push(result);
+            this.carsAll.map(el => {
+                this.car = new Car(el, callbackCar);
+            })
         });
     }
 
@@ -164,7 +167,6 @@ export class PageGarage {
                     this.car = new Car(el, callbackCar);
                 }
             })
-            
         });
     }
 
