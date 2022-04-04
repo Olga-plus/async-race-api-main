@@ -206,8 +206,8 @@ export class PageGarage {
         const shuffleSecond = nameSecond.sort(() => Math.round(Math.random() * 100) - 50);
         
 
-        for (let i = 0; i < 100; i++){
-            for (let j = 0; j < nameSecond.length; j++){
+        for (let j = 0; j < nameSecond.length; j++){
+            for (let i = 0; i < 100; i++){
                 if (j >= nameSecond.length && i < 100) {
                     j = 0;
                     nameCar.push(fetch(`http://localhost:3000/garage`, {
@@ -238,7 +238,6 @@ export class PageGarage {
             console.log( this.car, result, '<<Crrrrrss>>')
             body.innerHTML = '';
             this.createGaragePage();
-            // this.carsAll.push(result);
             // this.carsAll.map(el => {
             //     this.car = new Car(el, callbackCar);
             // })
