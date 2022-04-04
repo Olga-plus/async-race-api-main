@@ -157,7 +157,7 @@ export class PageGarage {
         .then(response => response.json())
         .then(result => {
             result.map((elem: any) => {
-                console.log(elem, '<<<Q')
+                elem.renderCar();
             })
             console.log( this.carsAll, result, 'function <<CARSss>>')
         });
