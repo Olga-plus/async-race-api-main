@@ -196,10 +196,15 @@ export class PageGarage {
 
     generate(){
         fetch('http://localhost:3000/garage/_limit=10',
-        {method: 'GET'})
+        {
+            method: 'GET',
+            headers: {
+                "X-Total-Count": "4"
+            }
+        })
           .then(response => response.json())
           .then(result => {
-            console.log( result, 'res <<CARS>>')
+            console.log( result, 'reffs <<CARS>>')
               this.carsAll = result.map((elem: Car) => {
                   this.car = new Car(elem, callbackCar);
                   return this.car;
