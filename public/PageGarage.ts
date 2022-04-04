@@ -139,8 +139,7 @@ export class PageGarage {
             result;
             body.innerHTML = '';
             this.createGaragePage();
-            this.carsAll;
-            console.log(this.carsAll);
+            this.car = new Car(result, callbackCar);
             
         });
     }
@@ -168,10 +167,6 @@ export class PageGarage {
                     this.car = new Car(el, callbackCar);
                 }
             })
-
-            //     this.car.name = result.name;
-            //     this.car.color = result.color;
-            // this.car = new Car(result, callbackCar);
             console.log( this.car, result, '<<AACARSss>>')
         });
     }
