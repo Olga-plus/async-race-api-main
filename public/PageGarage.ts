@@ -203,15 +203,10 @@ export const garagePage = new PageGarage(callbackGarage);
                     .then(result => {
                         body.innerHTML = '';
                         garagePage.createGaragePage();
-                        garagePage.carsAll
-                        fetch('http://localhost:3000/garage')
-                        .then(response => response.json())
-                        .then(result => {
-                            this.carsAll = result.map((elem: Car) => {
+                        garagePage.carsAll.map((elem: Car) => {
                                 this.car = new Car(elem, callbackCar);
                             })
                             console.log(  garagePage.carsAll, 'function <<CfffS>>')
-                        });
                     });
                 break;
             case 'select':
