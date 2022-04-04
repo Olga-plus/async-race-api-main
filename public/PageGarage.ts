@@ -157,9 +157,13 @@ export class PageGarage {
         .then(response => response.json())
         .then(result => {
 
-                this.car.name = result.name;
-                this.car.color = result.color;
-            this.car = new Car(result, callbackCar);
+            this.carsAll.map(el => {
+                this.car = new Car(el, callbackCar);
+            })
+
+            //     this.car.name = result.name;
+            //     this.car.color = result.color;
+            // this.car = new Car(result, callbackCar);
             console.log( this.car, result, '<<AACARSss>>')
         });
     }
