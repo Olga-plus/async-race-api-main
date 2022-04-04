@@ -118,6 +118,7 @@ export class Car {
 
     startedAll(_result: { distance: number; velocity: number; }){
         // .then((_result: { distance: number; velocity: number; }) => {
+            this.evtType === 'started';
             this.timestamp = _result.distance / _result.velocity;
                this.lengthCar = this.car.getBoundingClientRect().right;
                console.log(this.timestamp, '<<this.timestamp', this.car, '<<this.car')
