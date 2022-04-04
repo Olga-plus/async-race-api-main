@@ -238,9 +238,9 @@ export class PageGarage {
             console.log( this.car, result, '<<Crrrrrss>>')
             body.innerHTML = '';
             this.createGaragePage();
-            // this.carsAll.map(el => {
-            //     this.car = new Car(el, callbackCar);
-            // })
+            result.map(el => {
+                this.car = new Car(el, callbackCar);
+            })
         });
     }
 }
