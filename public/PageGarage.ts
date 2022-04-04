@@ -193,7 +193,10 @@ export class PageGarage {
     reset(){
 
     }
-
+    color () {
+        let color = (Math.random().toString(16) + '000000').substring(2,8).toUpperCase();
+        return color;
+    }
     generate(){
         let arrCars = [];
         const nameFirst = ['Tesla', 'Nissan', 'Ford', 'Toyota', 'Jaguar', 'Porsche', 'KIA'];
@@ -201,7 +204,7 @@ export class PageGarage {
         const nameCar = [];
         const shuffleFirst = nameFirst.sort(() => Math.round(Math.random() * 100) - 50);
         const shuffleSecond = nameSecond.sort(() => Math.round(Math.random() * 100) - 50);
-        let color = ()=>{(Math.random().toString(16) + '000000').substring(2,8).toUpperCase()};
+        
 
         for (let i = 0; i < 100; i++){
             for (let j = 0; j < nameSecond.length; j++){
@@ -209,7 +212,7 @@ export class PageGarage {
                     j = 0;
                     nameCar.push(fetch(`http://localhost:3000/garage`, {
                         method: 'POST',
-                        body: JSON.stringify({ name: shuffleFirst[j] + ' ' + shuffleSecond[j], color: color()}),
+                        body: JSON.stringify({ name:`${shuffleFirst[j] + ' ' + shuffleSecond[j]}`, color: this.color()}),
                         headers: {
                             'content-type': 'application/json'
                         }
@@ -217,7 +220,7 @@ export class PageGarage {
                 } else {
                     nameCar.push(fetch(`http://localhost:3000/garage`, {
                         method: 'POST',
-                        body: JSON.stringify({ name: shuffleFirst[j] + ' ' + shuffleSecond[j], color: color()}),
+                        body: JSON.stringify({ name:`${shuffleFirst[j] + ' ' + shuffleSecond[j]}`, color: this.color()}),
                         headers: {
                             'content-type': 'application/json'
                         }
@@ -226,7 +229,7 @@ export class PageGarage {
             }
             
         }
-        console.log('color', color);
+        console.log('color', this.color());
         console.log( 'nameCar', nameCar);
         console.log( 'shuffle', shuffleSecond);
 
