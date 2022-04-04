@@ -195,23 +195,28 @@ export class PageGarage {
     }
 
     generate(){
-        fetch('http://localhost:3000/garage/_limit=10',
-        {
-            method: 'GET',
-            headers: {
-                "X-Total-Count": "4"
-            }
-        })
-          .then(response => response.json())
-          .then(result => {
-            console.log( result, 'reffs <<CARS>>')
-              this.carsAll = result.map((elem: Car) => {
-                  this.car = new Car(elem, callbackCar);
-                  return this.car;
-              })
+        let arrCars = [];
+        const nameCar = ['Tesla', 'Nissan', 'Ford', 'Toyota', 'Jaguar', 'Porsche', 'KIA'];
+        const nameSecond = ['GT', 'GTI', 'Camry', 'Corsa', 'Combi', 'RiA', 'DB9'];
+        let color = (Math.random().toString(16) + '000000').substring(2,8).toUpperCase();
+        console.log('color', color);
+        // fetch('http://localhost:3000/garage/_limit=10',
+        // {
+        //     method: 'GET',
+        //     headers: {
+        //         "X-Total-Count": "4"
+        //     }
+        // })
+        //   .then(response => response.json())
+        //   .then(result => {
+        //     console.log( result, 'reffs <<CARS>>')
+        //       this.carsAll = result.map((elem: Car) => {
+        //           this.car = new Car(elem, callbackCar);
+        //           return this.car;
+        //       })
               
-              return this.carsAll;
-          });
+        //       return this.carsAll;
+        //   });
     }
 }
 export const garagePage = new PageGarage(callbackGarage);
