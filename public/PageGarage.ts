@@ -164,7 +164,7 @@ export class PageGarage {
     }
 
     raseAll() {
-        console.log( 'GGG<<' )
+        console.log( this.carsAll.length, 'GGG<<' )
         let promisAll;
             let arr: any = [];
             for (let i = 0; i < this.carsAll.length; i++) {
