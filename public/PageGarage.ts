@@ -199,8 +199,8 @@ export class PageGarage {
     }
     randome () {
         const nameFirst = ['Tesla', 'Nissan', 'Ford', 'Toyota', 'Jaguar', 'Porsche', 'KIA'];
-        const nameSecond = ['GT', 'GTI', 'Camry', 'Corsa', 'Combi', 'RiA', 'DB9', 'Carrera'];
-        const randSec = Math.random() * nameSecond.length | 0;
+        const nameSecond = ['GT', 'GTI', 'Camry', 'Corsa', 'Combi', 'RiA', 'Carrera'];
+        const randSec = Math.random() * nameSecond.length;
         const rValue = `${nameFirst[randSec]} ${nameSecond[randSec]}` ;
         return rValue;
     }
