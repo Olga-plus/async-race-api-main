@@ -189,7 +189,7 @@ export class PageGarage {
            console.log(arr, 'romisAll');
     }
 
-    reser(){
+    reset(){
 
     }
 
