@@ -197,41 +197,57 @@ export class PageGarage {
         let color = (Math.random().toString(16) + '000000').substring(2,8).toUpperCase();
         return color;
     }
-    generate(){
-        let arrCars = [];
+    randome () {
         const nameFirst = ['Tesla', 'Nissan', 'Ford', 'Toyota', 'Jaguar', 'Porsche', 'KIA'];
-        const nameSecond = ['GT', 'GTI', 'Camry', 'Corsa', 'Combi', 'RiA', 'DB9'];
+        const nameSecond = ['GT', 'GTI', 'Camry', 'Corsa', 'Combi', 'RiA', 'DB9', 'Carrera'];
+        const randSec = Math.random() * nameSecond.length | 0;
+        const rValue = `${nameFirst[randSec]} ${nameSecond[randSec]}` ;
+        return rValue;
+    }
+    generate(){
+        // const nameFirst = ['Tesla', 'Nissan', 'Ford', 'Toyota', 'Jaguar', 'Porsche', 'KIA'];
+        // const nameSecond = ['GT', 'GTI', 'Camry', 'Corsa', 'Combi', 'RiA', 'DB9'];
         const nameCar = [];
-        const shuffleFirst = nameFirst.sort(() => Math.round(Math.random() * 100) - 50);
-        const shuffleSecond = nameSecond.sort(() => Math.round(Math.random() * 100) - 50);
-        
-
-        for (let j = 0; j < nameSecond.length; j++){
-            for (let i = 0; i < 100; i++){
-                if (j >= nameSecond.length && i < 100) {
-                    j = 0;
-                    nameCar.push(fetch(`http://localhost:3000/garage`, {
+        // const shuffleFirst = nameFirst.sort(() => Math.round(Math.random() * 100) - 50);
+        // const shuffleSecond = nameSecond.sort(() => Math.round(Math.random() * 100) - 50);
+        let i = 0;
+        while ( i < 100) {
+            i ++;
+            nameCar.push(fetch(`http://localhost:3000/garage`, {
                         method: 'POST',
-                        body: JSON.stringify({ name:`${shuffleFirst[j] + ' ' + shuffleSecond[j]}`, color: this.color()}),
+                        body: JSON.stringify({ name: this.randome(), color: this.color()}),
                         headers: {
                             'content-type': 'application/json'
                         }
                     }).then(response => response.json()))
-                } else {
-                    nameCar.push(fetch(`http://localhost:3000/garage`, {
-                        method: 'POST',
-                        body: JSON.stringify({ name:`${shuffleFirst[j] + ' ' + shuffleSecond[j]}`, color: this.color()}),
-                        headers: {
-                            'content-type': 'application/json'
-                        }
-                    }).then(response => response.json()))
-                }
-            }
-            
         }
-        console.log('color', this.color());
+
+        // for (let j = 0; j < nameSecond.length; j++){
+        //     for (let i = 0; i < 100; i++){
+        //         if (j >= nameSecond.length && i < 100) {
+        //             j = 0;
+        //             nameCar.push(fetch(`http://localhost:3000/garage`, {
+        //                 method: 'POST',
+        //                 body: JSON.stringify({ name:`${shuffleFirst[j] + ' ' + shuffleSecond[j]}`, color: this.color()}),
+        //                 headers: {
+        //                     'content-type': 'application/json'
+        //                 }
+        //             }).then(response => response.json()))
+        //         } else {
+        //             nameCar.push(fetch(`http://localhost:3000/garage`, {
+        //                 method: 'POST',
+        //                 body: JSON.stringify({ name:`${shuffleFirst[j] + ' ' + shuffleSecond[j]}`, color: this.color()}),
+        //                 headers: {
+        //                     'content-type': 'application/json'
+        //                 }
+        //             }).then(response => response.json()))
+        //         }
+        //     }
+            
+        // }
+        // console.log('color', this.color());
         console.log( 'nameCar', nameCar);
-        console.log( 'shuffle', shuffleSecond);
+        // console.log( 'shuffle', shuffleSecond);
 
        
         Promise.all(nameCar).then(result => {
