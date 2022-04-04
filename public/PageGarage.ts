@@ -206,6 +206,8 @@ export class PageGarage {
                 if (j >= nameSecond.length) {
                     j = 0;
                    nameCar.push(shuffleFirst[j] + shuffleSecond[j]) 
+                } else {
+                    nameCar.push(shuffleFirst[j] + shuffleSecond[j])
                 }
             }
             
