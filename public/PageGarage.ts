@@ -206,14 +206,12 @@ export const garagePage = new PageGarage(callbackGarage);
                         let rezID = this.car.id
                         garagePage.carsAll.map((el: Car) => {
                             if (el.id === rezID) {
-                                el.name = result.name;
-                                el.color = result.color;
-                                this.car = new Car(el, callbackCar);
+                                el.remove();
                             } else {
                                 this.car = new Car(el, callbackCar);
                             }
                         })
-                            console.log(  garagePage.carsAll, 'function <<CAAffS>>')
+                            console.log(  garagePage.carsAll, 'function <<CBBffS>>')
                     });
                 break;
             case 'select':
