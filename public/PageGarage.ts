@@ -158,6 +158,7 @@ export class PageGarage {
         .then(result => {
             body.innerHTML = '';
             result.map((elem: any) => {
+                console.log( "this.carsAll")
                 elem.renderCar();
             })
             console.log( this.carsAll, result, 'function <<CARSss>>')
