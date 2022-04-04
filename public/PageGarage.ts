@@ -201,40 +201,45 @@ export class PageGarage {
         const nameCar = [];
         const shuffleFirst = nameFirst.sort(() => Math.round(Math.random() * 100) - 50);
         const shuffleSecond = nameSecond.sort(() => Math.round(Math.random() * 100) - 50);
+        let color = (Math.random().toString(16) + '000000').substring(2,8).toUpperCase();
+
         for (let i = 0; i < 100; i++){
             for (let j = 0; j < nameSecond.length; j++){
                 if (j >= nameSecond.length) {
                     j = 0;
-                    shuffleFirst;
-                    shuffleSecond;
-                    nameCar.push(shuffleFirst[j] + ' ' + shuffleSecond[j]) 
+                    nameCar.push(fetch(`http://localhost:3000/garage`, {
+                        method: 'POST',
+                        body: JSON.stringify({ name: shuffleFirst[j] + ' ' + shuffleSecond[j], color: color}),
+                        headers: {
+                            'content-type': 'application/json'
+                        }
+                    }).then(response => response.json()))
                 } else {
-                    nameCar.push(shuffleFirst[j] + ' ' + shuffleSecond[j])
+                    nameCar.push(fetch(`http://localhost:3000/garage`, {
+                        method: 'POST',
+                        body: JSON.stringify({ name: shuffleFirst[j] + ' ' + shuffleSecond[j], color: color}),
+                        headers: {
+                            'content-type': 'application/json'
+                        }
+                    }).then(response => response.json()))
                 }
             }
             
         }
-        let color = (Math.random().toString(16) + '000000').substring(2,8).toUpperCase();
         console.log('color', color);
         console.log( 'nameCar', nameCar);
         console.log( 'shuffle', shuffleSecond);
-        // fetch('http://localhost:3000/garage/_limit=10',
-        // {
-        //     method: 'GET',
-        //     headers: {
-        //         "X-Total-Count": "4"
-        //     }
-        // })
-        //   .then(response => response.json())
-        //   .then(result => {
-        //     console.log( result, 'reffs <<CARS>>')
-        //       this.carsAll = result.map((elem: Car) => {
-        //           this.car = new Car(elem, callbackCar);
-        //           return this.car;
-        //       })
-              
-        //       return this.carsAll;
-        //   });
+
+       
+        Promise.all(nameCar).then(result => {
+            console.log( this.car, result, '<<Crrrrrss>>')
+            body.innerHTML = '';
+            this.createGaragePage();
+            // this.carsAll.push(result);
+            // this.carsAll.map(el => {
+            //     this.car = new Car(el, callbackCar);
+            // })
+        });
     }
 }
 export const garagePage = new PageGarage(callbackGarage);
