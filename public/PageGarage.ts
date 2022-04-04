@@ -201,11 +201,11 @@ export class PageGarage {
         const nameCar = [];
         const shuffleFirst = nameFirst.sort(() => Math.round(Math.random() * 100) - 50);
         const shuffleSecond = nameSecond.sort(() => Math.round(Math.random() * 100) - 50);
-        let color = (Math.random().toString(16) + '000000').substring(2,8).toUpperCase();
+        let color = ()=>{(Math.random().toString(16) + '000000').substring(2,8).toUpperCase()};
 
         for (let i = 0; i < 100; i++){
             for (let j = 0; j < nameSecond.length; j++){
-                if (j >= nameSecond.length) {
+                if (j >= nameSecond.length && i < 100) {
                     j = 0;
                     nameCar.push(fetch(`http://localhost:3000/garage`, {
                         method: 'POST',
