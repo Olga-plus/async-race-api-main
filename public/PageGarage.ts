@@ -205,11 +205,7 @@ export class PageGarage {
         return rValue;
     }
     generate(){
-        // const nameFirst = ['Tesla', 'Nissan', 'Ford', 'Toyota', 'Jaguar', 'Porsche', 'KIA'];
-        // const nameSecond = ['GT', 'GTI', 'Camry', 'Corsa', 'Combi', 'RiA', 'DB9'];
         const nameCar = [];
-        // const shuffleFirst = nameFirst.sort(() => Math.round(Math.random() * 100) - 50);
-        // const shuffleSecond = nameSecond.sort(() => Math.round(Math.random() * 100) - 50);
         let i = 0;
         while ( i < 100) {
             i ++;
@@ -222,39 +218,14 @@ export class PageGarage {
                     }).then(response => response.json()))
         }
 
-        // for (let j = 0; j < nameSecond.length; j++){
-        //     for (let i = 0; i < 100; i++){
-        //         if (j >= nameSecond.length && i < 100) {
-        //             j = 0;
-        //             nameCar.push(fetch(`http://localhost:3000/garage`, {
-        //                 method: 'POST',
-        //                 body: JSON.stringify({ name:`${shuffleFirst[j] + ' ' + shuffleSecond[j]}`, color: this.color()}),
-        //                 headers: {
-        //                     'content-type': 'application/json'
-        //                 }
-        //             }).then(response => response.json()))
-        //         } else {
-        //             nameCar.push(fetch(`http://localhost:3000/garage`, {
-        //                 method: 'POST',
-        //                 body: JSON.stringify({ name:`${shuffleFirst[j] + ' ' + shuffleSecond[j]}`, color: this.color()}),
-        //                 headers: {
-        //                     'content-type': 'application/json'
-        //                 }
-        //             }).then(response => response.json()))
-        //         }
-        //     }
-            
-        // }
-        // console.log('color', this.color());
         console.log( 'nameCar', nameCar);
-        // console.log( 'shuffle', shuffleSecond);
-
        
         Promise.all(nameCar).then(result => {
-            console.log( this.car, result, '<<Crrrrrss>>')
+            console.log( this.car, result, '<<Crjrss>>')
             body.innerHTML = '';
             this.createGaragePage();
-            result.map(el => {
+            this.carsAll.concat(result);
+            this.carsAll.map(el => {
                 this.car = new Car(el, callbackCar);
             })
         });
