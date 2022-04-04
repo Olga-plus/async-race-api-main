@@ -160,6 +160,7 @@ export class PageGarage {
             //     console.log( elem, "this.carsAll")
             //     elem.renderCar();
             // })
+            result.renderCar();
             console.log( this.carsAll, result, 'function <<CARSss>>')
         });
     }
