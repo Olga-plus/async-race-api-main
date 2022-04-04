@@ -136,11 +136,18 @@ export class PageGarage {
             }
         }).then(response => response.json())
         .then(result => {
-            result;
             body.innerHTML = '';
             this.createGaragePage();
-            this.car = new Car(result, callbackCar);
-            
+            let rezID = result.id;
+            this.carsAll.map(el => {
+                if (el.id === rezID) {
+                    el.name = result.name;
+                    el.color = result.color;
+                    this.car = new Car(el, callbackCar);
+                } else {
+                    this.car = new Car(el, callbackCar);
+                }
+            })
         });
     }
 
