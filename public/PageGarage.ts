@@ -209,7 +209,7 @@ export class PageGarage {
                     j = 0;
                     nameCar.push(fetch(`http://localhost:3000/garage`, {
                         method: 'POST',
-                        body: JSON.stringify({ name: shuffleFirst[j] + ' ' + shuffleSecond[j], color: color}),
+                        body: JSON.stringify({ name: shuffleFirst[j] + ' ' + shuffleSecond[j], color: color()}),
                         headers: {
                             'content-type': 'application/json'
                         }
@@ -217,7 +217,7 @@ export class PageGarage {
                 } else {
                     nameCar.push(fetch(`http://localhost:3000/garage`, {
                         method: 'POST',
-                        body: JSON.stringify({ name: shuffleFirst[j] + ' ' + shuffleSecond[j], color: color}),
+                        body: JSON.stringify({ name: shuffleFirst[j] + ' ' + shuffleSecond[j], color: color()}),
                         headers: {
                             'content-type': 'application/json'
                         }
