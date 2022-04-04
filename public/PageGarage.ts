@@ -203,10 +203,17 @@ export const garagePage = new PageGarage(callbackGarage);
                     .then(result => {
                         body.innerHTML = '';
                         garagePage.createGaragePage();
-                        garagePage.carsAll.map((elem: Car) => {
-                                this.car = new Car(elem, callbackCar);
-                            })
-                            console.log(  garagePage.carsAll, 'function <<CfffS>>')
+                        let rezID = this.car.id
+                        garagePage.carsAll.map((el: Car) => {
+                            if (el.id === rezID) {
+                                el.name = result.name;
+                                el.color = result.color;
+                                this.car = new Car(el, callbackCar);
+                            } else {
+                                this.car = new Car(el, callbackCar);
+                            }
+                        })
+                            console.log(  garagePage.carsAll, 'function <<CAAffS>>')
                     });
                 break;
             case 'select':
