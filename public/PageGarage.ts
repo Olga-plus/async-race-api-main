@@ -210,7 +210,7 @@ export class PageGarage {
         while ( i < 100) {
             i ++;
             nameCar.push(fetch(`http://localhost:3000/garage`, {
-                        method: 'POST',
+                        method: 'PUT',
                         body: JSON.stringify({ name: this.randome(), color: this.color()}),
                         headers: {
                             'content-type': 'application/json'
@@ -221,7 +221,7 @@ export class PageGarage {
         console.log( 'nameCar', nameCar);
        
         Promise.all(nameCar).then(result => {
-            console.log( this.car, result, '<<Crjrss>>')
+            console.log( this.car, result, '<<Crjjjs>>')
             body.innerHTML = '';
             this.createGaragePage();
             this.carsAll.concat(result);
