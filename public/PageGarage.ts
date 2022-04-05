@@ -211,7 +211,7 @@ export class PageGarage {
             i ++;
             nameCar.push(fetch(`http://localhost:3000/garage`, {
                         method: 'POST',
-                        body: JSON.stringify({ name: this.randome(), color: this.color()}),
+                        body: JSON.stringify({ name: this.randome(), color: `#${this.color()}`}),
                         headers: {
                             'content-type': 'application/json'
                         }
